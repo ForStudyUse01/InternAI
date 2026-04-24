@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: internai-backend
+    runtime: node
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        sync: false
+      - key: JWT_ACCESS_EXPIRES_IN
+        value: 1d
+      - key: OTP_PROVIDER
+        value: mock
+      - key: OTP_LENGTH
+        value: 6
+      - key: OTP_TTL_MINUTES
+        value: 10
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: RESUME_MAX_FILE_SIZE_MB
+        value: 5
+      - key: RESUME_UPLOAD_DIR
+        value: uploads/resumes
+      - key: REQUEST_TIMEOUT_MS
+        value: 30000
+      - key: CLIENT_ORIGIN
+        sync: false
