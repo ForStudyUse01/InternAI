@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <AuthProvider>
       <App />
-      <Toaster richColors position="top-right" closeButton />
+      <Toaster richColors theme="dark" position="top-right" closeButton toastOptions={{ className: "border border-gray-700 bg-app-card text-gray-100" }} />
     </AuthProvider>
   </React.StrictMode>
 );

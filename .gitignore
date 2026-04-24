@@ -11,6 +11,8 @@ server/dist/
 Thumbs.db
 .vscode/
 .idea/
+.cursor/
 .vercel
 server/uploads/
 /*.pdf
+graphify-out/

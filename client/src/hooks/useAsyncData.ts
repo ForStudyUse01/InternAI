@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, type DependencyList } from "react";
+﻿import { startTransition, useEffect, useState, type DependencyList } from "react";
 
 export function useAsyncData<T>(loader: () => Promise<T>, deps: DependencyList) {
   const [data, setData] = useState<T | null>(null);
@@ -7,8 +7,10 @@ export function useAsyncData<T>(loader: () => Promise<T>, deps: DependencyList) 
 
   useEffect(() => {
     let mounted = true;
-    setLoading(true);
-    setError(null);
+    startTransition(() => {
+      setLoading(true);
+      setError(null);
+    });
 
     loader()
       .then((result) => {

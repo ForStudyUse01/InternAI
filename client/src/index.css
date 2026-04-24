@@ -2,9 +2,163 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+@layer base {
+  html {
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #000000;
+    color: #e5e7eb;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Card fill: plain CSS only — never use custom-color opacity utilities inside @apply. */
+  .card-surface {
+    @apply rounded-[24px] border border-white/10 p-4 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .field-input,
+  .field-select {
+    @apply rounded-xl border border-white/15 px-3 py-2.5 text-sm text-white outline-none transition-shadow placeholder:text-white/35 backdrop-blur-md;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .field-input:focus,
+  .field-select:focus {
+    border-color: rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.15);
+  }
+
+  .field-select {
+    @apply w-full;
+  }
+
+  .field-select option {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  /* Intern dashboard cards: no layout transform (keeps text sharp) */
+  .intern-depth-card-surface {
+    transition: box-shadow 0.45s cubic-bezier(0.33, 1, 0.68, 1), border-color 0.4s ease;
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  }
+
+  .intern-depth-card-surface:hover {
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.46), 0 0 20px rgba(0, 255, 200, 0.1);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  @keyframes beamPulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Intern dashboard: global soft ambient glow (not a vertical strip; never inside cards) */
+  .intern-dashboard-page .ambient-beam {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 400px;
+    height: 100vh;
+    transform: translateX(-50%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 255, 200, 0.18) 0%,
+      rgba(0, 255, 200, 0.08) 30%,
+      rgba(0, 255, 200, 0.03) 55%,
+      transparent 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    animation: beamPulse 6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .intern-dashboard-page .ambient-beam {
+      animation: none;
+      opacity: 0.55;
+    }
+  }
+
+  .intern-cursor-trail-particle {
+    pointer-events: none;
+    white-space: nowrap;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 0 3px rgba(0, 255, 200, 0.45);
+  }
+
+  /* Intern dashboard: continuous beam — dim full gradient via ::before; bright fill on top (same gradient) */
+  .intern-dashboard-page .bar {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .intern-dashboard-page .bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #00ffcc, #00e0ff);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .intern-dashboard-page .bar-fill {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #00ffcc, #00e0ff);
+    transform-origin: left center;
+    transform: scaleX(0);
+    opacity: 1;
+    border-radius: 999px;
+  }
+
+  #custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: url("/arrow1-InternAI.png") no-repeat center;
+    background-size: contain;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+  }
+
+  @media (min-width: 768px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    body.intern-dashboard-cursor-page,
+    body.intern-dashboard-cursor-page * {
+      cursor: none !important;
+    }
+  }
 }

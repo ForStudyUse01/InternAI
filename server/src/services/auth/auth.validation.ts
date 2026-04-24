@@ -1,4 +1,4 @@
-﻿import { HttpError } from "../../utils/httpError";
+import { HttpError } from "../../utils/httpError";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MOBILE_REGEX = /^\+?[0-9]{8,15}$/;
@@ -49,15 +49,18 @@ export function validateSignupInput(input: SignupInput): void {
     throw new HttpError(400, "Password and confirm password do not match");
   }
 
+  if (input.password.length < 8) {
+    throw new HttpError(400, "Password must be at least 8 characters long");
+  }
+
   const isStrongPassword =
-    input.password.length >= 8 &&
     UPPERCASE_REGEX.test(input.password) &&
     LOWERCASE_REGEX.test(input.password) &&
     NUMBER_REGEX.test(input.password) &&
     SPECIAL_REGEX.test(input.password);
 
   if (!isStrongPassword) {
-    throw new HttpError(400, "Password must contain uppercase, lowercase, number, and special character");
+    throw new HttpError(400, "Password must contain an uppercase letter, lowercase letter, number, and special character");
   }
 }
 

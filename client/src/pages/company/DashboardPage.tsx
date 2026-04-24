@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
 import { apiClient } from "@/services/api/client";
@@ -120,38 +120,46 @@ export function CompanyDashboardPage() {
 
   return (
     <section className="space-y-6">
-      <h1 className="text-2xl font-semibold">Company Dashboard</h1>
+      <h1 className="text-2xl font-semibold text-white">Company Dashboard</h1>
 
-      <article className="rounded-lg border border-slate-200 bg-white p-4">
-        <h2 className="mb-3 font-semibold">Create Internship</h2>
+      <article className="card-surface">
+        <h2 className="mb-3 font-semibold text-white">Create Internship</h2>
         <form className="grid gap-3 md:grid-cols-2" onSubmit={handleCreateInternship}>
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Title" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Location" value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} required />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Duration" value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} required />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Stipend" value={form.stipend} onChange={(e) => setForm({ ...form, stipend: e.target.value })} required />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm md:col-span-2" placeholder="Description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} required />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Required skills (comma separated)" value={form.requiredSkills} onChange={(e) => setForm({ ...form, requiredSkills: e.target.value })} />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Preferred skills (comma separated)" value={form.preferredSkills} onChange={(e) => setForm({ ...form, preferredSkills: e.target.value })} />
-          <button type="submit" disabled={submitting} className="rounded bg-blue-600 px-3 py-2 text-sm text-white disabled:opacity-60 md:col-span-2">
+          <input className="field-input" placeholder="Title" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
+          <input className="field-input" placeholder="Location" value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} required />
+          <input className="field-input" placeholder="Duration" value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} required />
+          <input className="field-input" placeholder="Stipend" value={form.stipend} onChange={(e) => setForm({ ...form, stipend: e.target.value })} required />
+          <input className="field-input md:col-span-2" placeholder="Description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} required />
+          <input className="field-input" placeholder="Required skills (comma separated)" value={form.requiredSkills} onChange={(e) => setForm({ ...form, requiredSkills: e.target.value })} />
+          <input className="field-input" placeholder="Preferred skills (comma separated)" value={form.preferredSkills} onChange={(e) => setForm({ ...form, preferredSkills: e.target.value })} />
+          <button
+            type="submit"
+            disabled={submitting}
+            className="rounded-lg bg-gradient-to-r from-[#00E58D] to-[#12CBE2] px-3 py-2 text-sm font-semibold text-black shadow-[0_8px_20px_rgba(0,255,136,0.2)] disabled:opacity-50 md:col-span-2"
+          >
             {submitting ? "Saving..." : "Create Internship"}
           </button>
         </form>
       </article>
 
-      <article className="rounded-lg border border-slate-200 bg-white p-4">
-        <h2 className="mb-3 font-semibold">Manage Internships</h2>
+      <article className="card-surface">
+        <h2 className="mb-3 font-semibold text-white">Manage Internships</h2>
         {internshipState.loading && <SkeletonCard lines={4} />}
         {internshipState.error && <ErrorState message={internshipState.error} />}
         {internshipState.data && internshipState.data.items.length === 0 && <EmptyState message="Create your first internship listing" />}
         {internshipState.data && internshipState.data.items.length > 0 && (
           <div className="space-y-2 text-sm">
             {internshipState.data.items.map((item) => (
-              <div key={item._id} className="flex items-center justify-between rounded border border-slate-200 p-3">
-                <button type="button" className="text-left" onClick={() => setSelectedInternshipId(item._id)}>
-                  <p className="font-medium">{item.title}</p>
-                  <p className="text-slate-500">{item.location} • {item.status}</p>
+              <div key={item._id} className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-3">
+                <button type="button" className="text-left text-white/85 hover:text-white" onClick={() => setSelectedInternshipId(item._id)}>
+                  <p className="font-medium text-white">{item.title}</p>
+                  <p className="text-white/55">{item.location} • {item.status}</p>
                 </button>
-                <button type="button" className="rounded border border-red-200 px-2 py-1 text-red-600" onClick={() => handleDeleteInternship(item._id)}>
+                <button
+                  type="button"
+                  className="rounded-lg border border-red-500/40 px-2 py-1 text-sm text-red-400 hover:bg-red-500/10"
+                  onClick={() => handleDeleteInternship(item._id)}
+                >
                   Delete
                 </button>
               </div>
@@ -160,23 +168,23 @@ export function CompanyDashboardPage() {
         )}
       </article>
 
-      <article className="rounded-lg border border-slate-200 bg-white p-4">
-        <h2 className="mb-3 font-semibold">Applicants</h2>
+      <article className="card-surface">
+        <h2 className="mb-3 font-semibold text-white">Applicants</h2>
         {!selectedInternshipId && <EmptyState message="Select an internship to view applicants." />}
         {selectedInternshipId && applicantState.loading && <SkeletonCard lines={4} />}
         {selectedInternshipId && applicantState.error && <ErrorState message={applicantState.error} />}
         {selectedInternshipId && applicantState.data && applicantState.data.items.length === 0 && <EmptyState message="No applicants yet" />}
         {selectedInternshipId && applicantState.data && applicantState.data.items.length > 0 && (
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm text-white/85">
             {applicantState.data.items.map((applicant) => (
-              <div key={applicant.applicationId} className="rounded border border-slate-200 p-3">
-                <p className="font-medium">{applicant.name || "Unnamed applicant"}</p>
+              <div key={applicant.applicationId} className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-3">
+                <p className="font-medium text-white">{applicant.name || "Unnamed applicant"}</p>
                 <p>Skills: {applicant.skills.join(", ") || "None"}</p>
                 <p>Resume score: {applicant.resumeScore ?? "Not available"}</p>
                 <p>Status: {applicant.status}</p>
-                <div className="mt-2 flex gap-2">
+                <div className="mt-2 flex flex-wrap gap-2">
                   <select
-                    className="rounded border border-slate-300 px-2 py-1"
+                    className="field-select max-w-[11rem] py-1.5 text-xs"
                     value={statusUpdate[applicant.applicationId] ?? applicant.status}
                     onChange={(event) => setStatusUpdate({ ...statusUpdate, [applicant.applicationId]: event.target.value as Application["status"] })}
                   >
@@ -189,7 +197,7 @@ export function CompanyDashboardPage() {
                   </select>
                   <button
                     type="button"
-                    className="rounded border border-slate-300 px-2 py-1"
+                    className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-2 py-1 text-xs font-medium text-white/85 hover:border-white/20"
                     onClick={() => handleStatusUpdate(applicant.applicationId)}
                   >
                     Update Status
@@ -201,15 +209,19 @@ export function CompanyDashboardPage() {
         )}
       </article>
 
-      <article className="rounded-lg border border-slate-200 bg-white p-4">
-        <h2 className="mb-3 font-semibold">Add Feedback</h2>
+      <article className="card-surface">
+        <h2 className="mb-3 font-semibold text-white">Add Feedback</h2>
         <form className="grid gap-3 md:grid-cols-2" onSubmit={handleFeedbackSubmit}>
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Application ID" value={feedbackForm.applicationId} onChange={(e) => setFeedbackForm({ ...feedbackForm, applicationId: e.target.value })} required />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Strengths" value={feedbackForm.strengths} onChange={(e) => setFeedbackForm({ ...feedbackForm, strengths: e.target.value })} />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" placeholder="Weaknesses" value={feedbackForm.weaknesses} onChange={(e) => setFeedbackForm({ ...feedbackForm, weaknesses: e.target.value })} />
-          <input className="rounded border border-slate-300 px-3 py-2 text-sm" type="number" min={1} max={5} value={feedbackForm.rating} onChange={(e) => setFeedbackForm({ ...feedbackForm, rating: Number(e.target.value) })} />
-          <textarea className="rounded border border-slate-300 px-3 py-2 text-sm md:col-span-2" placeholder="Notes" value={feedbackForm.notes} onChange={(e) => setFeedbackForm({ ...feedbackForm, notes: e.target.value })} />
-          <button type="submit" disabled={submitting} className="rounded bg-slate-900 px-3 py-2 text-sm text-white disabled:opacity-60 md:col-span-2">
+          <input className="field-input" placeholder="Application ID" value={feedbackForm.applicationId} onChange={(e) => setFeedbackForm({ ...feedbackForm, applicationId: e.target.value })} required />
+          <input className="field-input" placeholder="Strengths" value={feedbackForm.strengths} onChange={(e) => setFeedbackForm({ ...feedbackForm, strengths: e.target.value })} />
+          <input className="field-input" placeholder="Weaknesses" value={feedbackForm.weaknesses} onChange={(e) => setFeedbackForm({ ...feedbackForm, weaknesses: e.target.value })} />
+          <input className="field-input" type="number" min={1} max={5} value={feedbackForm.rating} onChange={(e) => setFeedbackForm({ ...feedbackForm, rating: Number(e.target.value) })} />
+          <textarea className="field-input min-h-[88px] resize-y md:col-span-2" placeholder="Notes" value={feedbackForm.notes} onChange={(e) => setFeedbackForm({ ...feedbackForm, notes: e.target.value })} />
+          <button
+            type="submit"
+            disabled={submitting}
+            className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-2 text-sm font-semibold text-white/85 hover:border-white/20 disabled:opacity-50 md:col-span-2"
+          >
             Submit Feedback
           </button>
         </form>
