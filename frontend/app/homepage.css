@@ -1,0 +1,871 @@
+@import "./uiverse-tasty-dragon.css";
+
+/* InternAI homepage v2 — UI only; starfield scoped to homepage */
+
+html:has(.internai-home),
+body:has(.internai-home) {
+  background: transparent;
+}
+
+.internai-home {
+  --hp-deep: #090a0f;
+  --hp-mid: #1b2735;
+  --hp-surface: rgba(18, 26, 40, 0.9);
+  --hp-surface-raised: rgba(30, 42, 58, 0.96);
+  --hp-border: rgba(255, 255, 255, 0.12);
+  --hp-border-strong: rgba(255, 255, 255, 0.2);
+  --hp-text: #f3f4f6;
+  --hp-muted: #b4c2d0;
+  --hp-accent: #d8e8ff;
+  --hp-gap: 4rem;
+  color: var(--hp-text);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.internai-home-content {
+  position: relative;
+  z-index: 10;
+}
+
+.internai-home-content > header {
+  z-index: 50;
+  border-color: var(--hp-border) !important;
+  background: rgba(9, 10, 15, 0.82) !important;
+  box-shadow: inset 0 -1px 0 var(--hp-border);
+}
+
+/* Footer sits on the same permanent-dark starfield as the header — pin it the
+   same way so it reads as one continuous dark surface regardless of app-wide
+   theme, instead of the light-mode footer band next to a dark hero. */
+.internai-home-content > footer {
+  border-color: var(--hp-border) !important;
+  background: rgba(9, 10, 15, 0.82) !important;
+}
+
+/* The navbar's (and footer's) background is pinned dark above (they sit on the
+   permanent starfield), but their foreground (logo wordmark, links, logout/menu
+   buttons) reads the app-wide --ds-* tokens, which flip to light-appropriate
+   (dark) colors in light appearance — dark-on-dark against this fixed-dark
+   surface. Repin those tokens to the same fixed --hp-* values the rest of the
+   homepage already uses so text stays readable. Scoped to light appearance
+   only: in dark appearance --ds-* already resolves to the same near-white/
+   near-dark pairing --hp-* uses, so this rule never engages there. */
+:root[data-appearance="light"] .internai-home-content > header,
+:root[data-appearance="light"] .internai-home-content > footer {
+  --ds-text: var(--hp-text);
+  --ds-text-secondary: var(--hp-muted);
+  --ds-muted: var(--hp-muted);
+  --ds-accent: var(--hp-accent);
+  --ds-accent-strong: var(--hp-accent);
+  --ds-hover: var(--hp-surface-raised);
+  --ds-surface-raised: var(--hp-surface-raised);
+  --ds-surface: var(--hp-surface);
+  --ds-navbar: var(--hp-surface);
+  --ds-border: var(--hp-border);
+}
+
+/* readability.css also repaints several hp-* surfaces/labels/buttons with the
+   app-wide --ds-* tokens, at higher selector specificity than this file's own
+   rules below (e.g. `.internai-home .hp-surface` beats `.hp-surface`). That's
+   fine in dark appearance, where --ds-* already lines up with these fixed
+   --hp-* values — but in light appearance it repaints every card a pale
+   surface while the fixed --hp-text/--hp-muted foreground riding on top of it
+   stays near-white, i.e. white-on-white. Re-pin to the original fixed --hp-*
+   design, gated to light appearance only so dark stays byte-identical. */
+:root[data-appearance="light"] .internai-home .hp-label {
+  color: var(--hp-muted);
+}
+
+:root[data-appearance="light"] .internai-home .hp-sub,
+:root[data-appearance="light"] .internai-home .hp-trust li,
+:root[data-appearance="light"] .internai-home .hp-preview-score-label,
+:root[data-appearance="light"] .internai-home .hp-preview-block-label,
+:root[data-appearance="light"] .internai-home .hp-cap-desc {
+  color: var(--hp-muted);
+}
+
+:root[data-appearance="light"] .internai-home .hp-surface,
+:root[data-appearance="light"] .internai-home .hp-surface--interactive:hover {
+  background: var(--hp-surface);
+}
+
+:root[data-appearance="light"] .internai-home .hp-surface--interactive:hover {
+  background: var(--hp-surface-raised);
+}
+
+:root[data-appearance="light"] .internai-home .hp-btn-primary {
+  background: var(--hp-surface-raised);
+  border-color: var(--hp-border-strong);
+}
+
+:root[data-appearance="light"] .internai-home .hp-btn-primary,
+:root[data-appearance="light"] .internai-home .hp-btn-primary:hover {
+  color: var(--hp-accent) !important;
+}
+
+:root[data-appearance="light"] .internai-home .hp-btn-ghost {
+  color: var(--hp-text) !important;
+}
+
+.hp-main {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.hp-wrap {
+  margin: 0 auto;
+  max-width: 56rem;
+  padding: 0 1.25rem;
+  overflow: visible;
+}
+
+.hp-reveal-zone {
+  margin-top: 2rem;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .hp-wrap {
+    padding: 0 1.75rem;
+  }
+}
+
+/* —— Sections —— */
+.hp-section {
+  padding: var(--hp-gap) 0;
+  overflow: visible;
+}
+
+.hp-section:first-of-type {
+  padding-top: 0;
+}
+
+.hp-section + .hp-section {
+  border-top: 1px solid var(--hp-border);
+}
+
+.hp-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hp-muted);
+  line-height: 1.4;
+}
+
+.hp-title {
+  font-size: clamp(1.625rem, 3.2vw, 2.125rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--hp-text);
+}
+
+.hp-sub {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--hp-muted);
+}
+
+.hp-center {
+  text-align: center;
+}
+
+/* —— Hero —— */
+.hp-hero {
+  display: flex;
+  align-items: center;
+  min-height: 88vh;
+  padding: 5.5rem 0 4rem;
+}
+
+@media (min-width: 1024px) {
+  .hp-hero {
+    min-height: 90vh;
+    padding: 6rem 0 4.5rem;
+  }
+}
+
+.hp-hero-inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 76rem;
+  padding: 0 1.25rem;
+  display: grid;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .hp-hero-inner {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hp-hero-inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    padding: 0 2.5rem;
+  }
+}
+
+.hp-hero-copy {
+  text-align: left;
+  max-width: 42rem;
+}
+
+@media (min-width: 1280px) {
+  .hp-hero-copy {
+    max-width: 48rem;
+  }
+
+  .hp-hero-inner {
+    gap: 3.5rem;
+  }
+}
+
+.hp-hero-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hp-accent);
+}
+
+.hp-hero-headline {
+  margin-top: 0.75rem;
+  font-size: clamp(2.1rem, 4.6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--hp-text);
+  max-width: 52rem;
+}
+
+.hp-hero-headline-accent {
+  color: var(--hp-accent);
+}
+
+.hp-hero-lines {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hp-hero-lines p {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--hp-muted);
+}
+
+.hp-hero-lines p:first-child {
+  color: var(--hp-text);
+  font-weight: 500;
+}
+
+.hp-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.hp-actions--left {
+  justify-content: flex-start;
+}
+
+.hp-btn-lg {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.0625rem;
+}
+
+.hp-trust {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.35rem;
+  list-style: none;
+  padding: 0;
+}
+
+.hp-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--hp-muted);
+  line-height: 1.35;
+}
+
+.hp-trust-icon {
+  height: 0.9rem;
+  width: 0.9rem;
+  flex-shrink: 0;
+  color: var(--hp-accent);
+  opacity: 0.85;
+}
+
+.hp-hero-preview-wrap {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  max-width: 22rem;
+  justify-self: center;
+}
+
+/* Ambient particle depth behind the card — decorative only, bled slightly
+   beyond the card's own box. `overflow-x-clip` on <main> keeps the bleed
+   from ever causing horizontal scroll. */
+.hp-hero-ambient-canvas {
+  position: absolute;
+  inset: -22%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* —— AI Career Coach 3D preview —— */
+.hp-preview-3d-scene {
+  position: relative;
+  width: 100%;
+  perspective: 1100px;
+  perspective-origin: 50% 45%;
+  isolation: isolate;
+}
+
+.hp-preview-3d-tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+/* Soft grounding shadow — static by default, nudged opposite the tilt
+   direction by the pointer-tilt loop so it reads as a fixed light source. */
+.hp-preview-3d-shadow {
+  position: absolute;
+  inset: 15%;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(0, 8px);
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.35) 0%, transparent 70%);
+  filter: blur(18px);
+  opacity: 0.5;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* Shadow softens and deepens on hover, as if the lifted card is catching
+   more ambient light — reinforces physical lift instead of just tilting. */
+.hp-preview-3d-scene:hover .hp-preview-3d-shadow {
+  opacity: 0.62;
+  filter: blur(22px);
+}
+
+.hp-preview-3d-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 115%;
+  height: 115%;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate3d(-50%, -50%, -52px);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(147, 197, 253, 0.2) 0%,
+    rgba(96, 165, 250, 0.08) 42%,
+    transparent 68%
+  );
+  filter: blur(30px);
+  opacity: 0.78;
+  transition: opacity 0.4s ease;
+}
+
+.hp-preview-3d-scene:hover .hp-preview-3d-glow {
+  opacity: 0.92;
+}
+
+.hp-preview-3d-float {
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+  animation: hp-preview-float 5.5s ease-in-out infinite;
+}
+
+.hp-preview-3d-card {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  background: var(--hp-surface);
+  isolation: isolate;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.hp-preview-3d-card:hover,
+.hp-preview-3d-card:focus-within {
+  background: var(--hp-surface);
+  border-color: rgba(216, 232, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 40px -20px rgba(0, 0, 0, 0.55);
+}
+
+/* Pointer-follow highlight — mimics a light source reflecting off the
+   card's surface. Opacity toggled by the tilt loop on pointer enter/leave;
+   position tracks the pointer via the same loop. Inert (opacity stays 0)
+   whenever that loop doesn't run, e.g. reduced motion or coarse pointer. */
+.hp-preview-3d-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    circle at var(--sheen-x, 50%) var(--sheen-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 38%
+  );
+}
+
+@keyframes hp-preview-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0) rotateZ(0.35deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-preview-3d-float {
+    animation: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .hp-preview-3d-scene {
+    perspective: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hp-hero-preview-wrap {
+    max-width: none;
+    justify-self: end;
+  }
+}
+
+.hp-preview {
+  padding: 1.35rem 1.4rem;
+  text-align: left;
+}
+
+.hp-preview-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hp-accent);
+}
+
+.hp-preview-score {
+  margin-top: 1.15rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--hp-border);
+}
+
+.hp-preview-score-label {
+  font-size: 0.8125rem;
+  color: var(--hp-muted);
+}
+
+.hp-preview-score-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--hp-text);
+}
+
+.hp-preview-block {
+  margin-top: 1rem;
+}
+
+.hp-preview-block-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hp-muted);
+}
+
+.hp-preview-skills {
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 1rem;
+  list-style: disc;
+  color: var(--hp-text);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.hp-preview-skills li {
+  color: var(--hp-muted);
+}
+
+.hp-preview-block--accent {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hp-border);
+}
+
+.hp-preview-next {
+  margin-top: 0.4rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--hp-text);
+}
+
+/* —— Surfaces (same material as background — no glass) —— */
+.hp-surface {
+  border: 1px solid var(--hp-border);
+  border-radius: 0.625rem;
+  background: var(--hp-surface);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.hp-surface--interactive {
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.hp-surface--interactive:hover {
+  border-color: var(--hp-border-strong);
+  background: var(--hp-surface-raised);
+}
+
+/* —— Buttons —— */
+.hp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.hp-btn-primary {
+  border: 1px solid var(--hp-border-strong);
+  background: var(--hp-surface-raised);
+  color: var(--hp-accent);
+}
+
+.hp-btn-primary:hover {
+  background: rgba(35, 48, 68, 0.9);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.hp-btn-ghost {
+  border: 1px solid var(--hp-border);
+  background: transparent;
+  color: var(--hp-text);
+}
+
+.hp-btn-ghost:hover {
+  background: var(--hp-surface);
+  border-color: var(--hp-border-strong);
+}
+
+/* —— How it works —— */
+.hp-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .hp-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.hp-step {
+  position: relative;
+  min-width: 0;
+  height: auto;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  overflow: visible;
+}
+
+.hp-step-num {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--hp-border);
+  background: var(--hp-surface-raised);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--hp-accent);
+}
+
+.hp-step-icon {
+  margin: 0.85rem auto 0;
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--hp-muted);
+}
+
+.hp-step h3 {
+  margin-top: 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--hp-text);
+}
+
+/* —— Capabilities grid —— */
+.hp-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .hp-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hp-cap-cell {
+  min-width: 0;
+  height: auto;
+  padding: 1.5rem 1.35rem;
+  overflow: visible;
+}
+
+.hp-cap-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--hp-text);
+}
+
+.hp-cap-desc {
+  margin-top: 0.4rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--hp-muted);
+}
+
+/* —— Students & companies —— */
+.hp-split {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .hp-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hp-split-panel {
+  padding: 1.5rem 1.35rem;
+}
+
+.hp-split-panel h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--hp-text);
+}
+
+.hp-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.hp-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--hp-muted);
+}
+
+.hp-list li::before {
+  content: "";
+  margin-top: 0.45rem;
+  height: 4px;
+  width: 4px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--hp-muted);
+  opacity: 0.7;
+}
+
+/* —— AI coach —— */
+.hp-coach {
+  margin-top: 2rem;
+  padding: 1.75rem 1.5rem;
+}
+
+.hp-coach-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hp-muted);
+}
+
+.hp-coach-quote {
+  margin-top: 1rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--hp-text);
+}
+
+.hp-coach-metric {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--hp-muted);
+}
+
+.hp-coach-metric strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--hp-accent);
+}
+
+.hp-coach-bar {
+  margin-top: 1rem;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hp-coach-bar-fill {
+  position: relative;
+  display: block;
+  width: var(--hp-progress, 78%);
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(27, 39, 53, 1), rgba(160, 180, 210, 0.55));
+  box-shadow: 0 0 10px rgba(160, 180, 210, 0.45);
+}
+
+.hp-coach-bar-glow {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  width: 42%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 22%,
+    rgba(230, 242, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.12) 78%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 8px rgba(200, 220, 255, 0.85),
+    0 0 16px rgba(160, 190, 255, 0.45);
+  opacity: 0;
+  transform: translateX(-110%);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.hp-coach-bar-fill--active .hp-coach-bar-glow {
+  opacity: 1;
+  animation: hp-coach-glow-pass 1.1s ease-in-out infinite;
+}
+
+@keyframes hp-coach-glow-pass {
+  0% {
+    transform: translateX(-110%);
+    opacity: 0.35;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(260%);
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-coach-bar-glow {
+    display: none;
+  }
+}
+
+/* —— Final CTA —— */
+.hp-cta {
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.hp-cta-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.hp-cta .hp-actions {
+  justify-content: center;
+}
+
+/* Stagger animation wrappers — prevent clip during enter */
+.hp-stagger-item {
+  overflow: visible;
+  min-width: 0;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-surface--interactive:hover {
+    transform: none;
+  }
+}

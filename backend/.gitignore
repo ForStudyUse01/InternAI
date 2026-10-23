@@ -1,0 +1,4 @@
+﻿node_modules
+.env
+uploads/resumes/*
+!uploads/resumes/.gitkeep

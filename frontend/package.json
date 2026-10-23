@@ -1,0 +1,65 @@
+{
+    "name": "ai-internship-platform-frontend",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbo",
+        "prebuild": "node ../deployment-guard/run.mjs --target=frontend",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:e2e": "playwright test",
+        "server:dev": "npm --prefix ../backend run dev",
+        "server:start": "npm --prefix ../backend run start",
+        "server:seed": "npm --prefix ../backend run seed",
+        "scorer:install": "npm --prefix ../backend run scorer:install",
+        "scorer:dev": "npm --prefix ../backend run scorer:dev",
+        "brand:favicons": "node scripts/generate-favicons.mjs",
+        "pwa:icons": "node scripts/generate-pwa-icons.mjs",
+        "courses:validate": "node scripts/validate-course-recommendations.mjs",
+        "courses:repair": "node scripts/repair-course-recommendations.mjs",
+        "encode:story-video": "node scripts/encode-story-video.mjs"
+    },
+    "dependencies": {
+        "@react-three/drei": "^10.7.8",
+        "@react-three/fiber": "^9.7.0",
+        "framer-motion": "^12.38.0",
+        "gsap": "^3.15.0",
+        "lucide-react": "^1.17.0",
+        "next": "15.5.21",
+        "react": "19.2.1",
+        "react-dom": "19.2.1",
+        "socket.io-client": "^4.8.3",
+        "three": "^0.185.1"
+    },
+    "devDependencies": {
+        "@netlify/plugin-nextjs": "^5.15.9",
+        "@playwright/test": "^1.62.0",
+        "@testing-library/jest-dom": "^7.0.0",
+        "@testing-library/react": "^16.3.2",
+        "@testing-library/user-event": "^14.6.1",
+        "@types/node": "^22.14.1",
+        "@types/react": "^19.0.12",
+        "@types/react-dom": "^19.0.5",
+        "@types/three": "^0.185.4",
+        "@vitejs/plugin-react": "^6.0.4",
+        "autoprefixer": "^10.4.21",
+        "eslint": "^9.39.5",
+        "eslint-config-next": "^16.2.11",
+        "ffmpeg-static": "^5.3.0",
+        "jsdom": "^29.1.1",
+        "postcss": "^8.5.3",
+        "sharp": "^0.35.3",
+        "tailwindcss": "^3.4.17",
+        "typescript": "^5.8.3",
+        "vitest": "^4.1.10"
+    },
+    "overrides": {
+        "next": {
+            "postcss": "$postcss",
+            "sharp": "$sharp"
+        }
+    }
+}

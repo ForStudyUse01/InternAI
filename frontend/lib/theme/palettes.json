@@ -1,0 +1,12 @@
+[
+  { "id": "ocean", "label": "Ocean Blue", "emoji": "🌊", "primary": "#0274BD", "neutral": "#E9E6DD", "surface": "#C4AD9D", "text": "#000000", "accent": "#F57251" },
+  { "id": "olive", "label": "Olive Green", "emoji": "🌿", "primary": "#445D48", "neutral": "#FDE5D4", "surface": "#D6CC99", "text": "#001524", "accent": "#5E3023" },
+  { "id": "crimson", "label": "Crimson Red", "emoji": "❤️", "primary": "#A41F13", "neutral": "#FAF5F1", "surface": "#E0DBD8", "text": "#292F36", "accent": "#8F7A6E" },
+  { "id": "golden", "label": "Golden Yellow", "emoji": "☀️", "primary": "#F2B418", "neutral": "#ECF8FD", "surface": "#AFCBD5", "text": "#272838", "accent": "#815355" },
+  { "id": "sunset", "label": "Sunset Orange", "emoji": "🍊", "primary": "#DC6D18", "neutral": "#FFF4E4", "surface": "#F8E0C9", "text": "#2B1A12", "accent": "#B1AA81" },
+  { "id": "royal", "label": "Royal Purple", "emoji": "💜", "primary": "#55356E", "neutral": "#E9E2F3", "surface": "#D6F5FF", "text": "#191308", "accent": "#76A787" },
+  { "id": "rose", "label": "Rose Pink", "emoji": "🌸", "primary": "#B9375E", "neutral": "#FFE0E9", "surface": "#CEDDBB", "text": "#434343", "accent": "#BE9A60" },
+  { "id": "modern", "label": "Modern White", "emoji": "🤍", "primary": "#FFFFFF", "neutral": "#EDEEEB", "surface": "#CCC7BF", "text": "#31393C", "accent": "#3E96F4" },
+  { "id": "midnight", "label": "Midnight Black", "emoji": "⚫", "primary": "#000000", "neutral": "#FBF4EF", "surface": "#E8EAEB", "text": "#AAABAE", "accent": "#975E64" },
+  { "id": "earth", "label": "Earth Brown", "emoji": "🤎", "primary": "#A86A24", "neutral": "#FEFAE0", "surface": "#FFFFFF", "text": "#151C0D", "accent": "#5E3023" }
+]

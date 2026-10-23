@@ -1,0 +1,27 @@
+/** All intern dashboard routes — used for prefetching. */
+export const INTERN_DASHBOARD_ROUTES = [
+  "/dashboard/intern",
+  "/dashboard/intern/profile",
+  "/dashboard/intern/profile/edit",
+  "/dashboard/intern/resume",
+  "/dashboard/intern/resume/score",
+  "/dashboard/intern/portfolio",
+  "/dashboard/intern/skill-gap",
+  "/dashboard/intern/internships/recommended",
+  "/dashboard/intern/internships/search",
+  "/dashboard/intern/internships/saved",
+  "/dashboard/intern/applications",
+  "/dashboard/intern/interviews",
+  "/dashboard/intern/calendar",
+  "/dashboard/intern/track-progress",
+  "/dashboard/intern/learning/courses",
+  "/dashboard/intern/learning/certifications",
+  "/dashboard/intern/learning/mock-aptitude",
+  "/dashboard/intern/learning/mock-technical",
+  "/dashboard/intern/learning/mock-interview",
+  "/dashboard/intern/notifications",
+  "/dashboard/intern/chat",
+  "/dashboard/intern/feedback/hr",
+  "/dashboard/intern/feedback/suggestions",
+  "/dashboard/intern/support"
+] as const;

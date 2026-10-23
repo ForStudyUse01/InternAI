@@ -1,0 +1,916 @@
+/**
+ * InternAI readability & contrast audit
+ * Boosts visibility on starfield background — does not change layout or background.
+ */
+
+:root {
+  --ds-text: #f3f4f6;
+  --ds-text-secondary: #d1d9e3;
+  --ds-muted: #b4c2d0;
+  --ds-muted-soft: #9eb0c2;
+  --ds-accent: #d8e8ff;
+  --ds-accent-strong: var(--ds-accent);
+  --ds-surface: rgba(18, 26, 40, 0.9);
+  --ds-surface-raised: rgba(30, 42, 58, 0.96);
+  --ds-border: rgba(255, 255, 255, 0.12);
+  --ds-border-strong: rgba(255, 255, 255, 0.2);
+  --ds-focus-ring: rgba(216, 232, 255, 0.35);
+  --ds-placeholder: var(--ds-muted);
+  --ds-disabled-text: var(--ds-muted);
+  --ds-disabled-bg: rgba(18, 26, 40, 0.55);
+}
+
+/* —— Homepage tokens (same contrast, no layout change) —— */
+.internai-home {
+  --hp-text: var(--ds-text);
+  --hp-muted: var(--ds-muted);
+  --hp-accent: var(--ds-accent);
+  --hp-surface: var(--ds-surface);
+  --hp-surface-raised: var(--ds-surface-raised);
+  --hp-border: var(--ds-border);
+  --hp-border-strong: var(--ds-border-strong);
+}
+
+.internai-home .hp-label {
+  color: var(--ds-muted);
+}
+
+.internai-home .hp-sub,
+.internai-home .hp-trust li,
+.internai-home .hp-preview-score-label,
+.internai-home .hp-preview-block-label,
+.internai-home .hp-cap-desc {
+  color: var(--ds-text-secondary);
+}
+
+.internai-home .hp-surface,
+.internai-home .hp-surface--interactive:hover {
+  background: var(--ds-surface);
+}
+
+.internai-home .hp-surface--interactive:hover {
+  background: var(--ds-surface-raised);
+}
+
+.internai-home .hp-btn-primary {
+  color: var(--ds-accent-strong);
+  background: var(--ds-surface-raised);
+  border-color: var(--ds-border-strong);
+}
+
+.internai-home .hp-btn-primary:hover {
+  color: #fff;
+  background: rgba(40, 54, 74, 0.98);
+}
+
+.internai-home .hp-btn-ghost {
+  color: var(--ds-text);
+}
+
+.internai-home .hp-btn-ghost:hover {
+  color: var(--ds-accent-strong);
+}
+
+/* —— Platform shell readability —— */
+.internai-platform .internai-platform-content > header,
+.internai-platform .internai-platform-content > footer {
+  background: rgba(9, 10, 15, 0.94) !important;
+}
+
+.internai-platform .ds-sidebar {
+  background: rgba(9, 10, 15, 0.92);
+}
+
+.internai-platform .ds-shell-header {
+  background: rgba(9, 10, 15, 0.94);
+}
+
+.internai-platform .ds-label,
+.internai-platform .ds-nav-section-label {
+  color: var(--ds-muted);
+}
+
+.internai-platform .ds-caption,
+.internai-platform .ds-sub {
+  color: var(--ds-text-secondary);
+}
+
+.internai-platform .ds-input-label {
+  color: var(--ds-text-secondary);
+  font-weight: 600;
+}
+
+/* —— Buttons (foreground only) —— */
+.internai-platform .ds-btn-primary {
+  color: var(--ds-accent-strong);
+  background: var(--ds-surface-raised);
+  border-color: var(--ds-border-strong);
+}
+
+.internai-platform .ds-btn-primary:hover:not(:disabled) {
+  color: #fff;
+  background: rgba(42, 56, 76, 0.98);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.internai-platform .ds-btn-secondary {
+  color: var(--ds-text);
+  border-color: var(--ds-border-strong);
+}
+
+.internai-platform .ds-btn-secondary:hover:not(:disabled) {
+  color: var(--ds-accent-strong);
+}
+
+.internai-platform .ds-btn-ghost {
+  color: var(--ds-text-secondary);
+}
+
+.internai-platform .ds-btn-ghost:hover:not(:disabled) {
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-btn:disabled {
+  opacity: 1;
+  color: var(--ds-disabled-text);
+  background: var(--ds-disabled-bg);
+  border-color: var(--ds-border);
+  cursor: not-allowed;
+}
+
+.internai-platform .ds-btn:focus-visible {
+  outline: 2px solid var(--ds-focus-ring);
+  outline-offset: 2px;
+}
+
+/* —— Surfaces & cards —— */
+.internai-platform .ds-surface,
+.internai-platform .ds-card,
+.internai-platform .surface-muted,
+.internai-platform .surface-card,
+.internai-platform .surface-subtle {
+  background: var(--ds-surface);
+  border-color: var(--ds-border);
+}
+
+.internai-platform .ds-card:hover,
+.internai-platform .ds-surface--interactive:hover {
+  background: var(--ds-surface-raised);
+}
+
+/* —— Forms —— */
+.internai-platform .ds-input,
+.internai-platform .ds-textarea,
+.internai-platform .ds-select,
+.internai-platform select.ds-input,
+.internai-platform select:not([class*="ds-"]) {
+  background: var(--ds-surface-raised);
+  border-color: var(--ds-border-strong);
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-input::placeholder,
+.internai-platform .ds-textarea::placeholder {
+  color: var(--ds-placeholder);
+  opacity: 1;
+}
+
+.internai-platform .ds-input:focus,
+.internai-platform .ds-textarea:focus,
+.internai-platform .ds-select:focus,
+.internai-platform select:focus {
+  border-color: var(--ds-accent);
+  box-shadow: 0 0 0 3px var(--ds-focus-ring);
+}
+
+.internai-platform .ds-input-error {
+  color: var(--ds-danger);
+  font-weight: 500;
+}
+
+/* —— Navigation —— */
+.internai-platform .ds-nav-link {
+  color: var(--ds-text-secondary);
+}
+
+.internai-platform .ds-nav-link:hover {
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-nav-link.is-active {
+  color: var(--ds-accent-strong);
+  font-weight: 600;
+}
+
+.internai-platform .ds-icon-btn {
+  color: var(--ds-text-secondary);
+}
+
+.internai-platform .ds-icon-btn:hover {
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-icon-btn:focus-visible {
+  outline: 2px solid var(--ds-focus-ring);
+  outline-offset: 2px;
+}
+
+/* —— Tables —— */
+.internai-platform .ds-table-wrap {
+  background: var(--ds-surface);
+}
+
+.internai-platform .ds-table th {
+  color: var(--ds-muted);
+  font-size: 0.75rem;
+}
+
+.internai-platform .ds-table td {
+  color: var(--ds-text);
+}
+
+.internai-platform table:not(.ds-table) th {
+  color: var(--ds-muted);
+}
+
+.internai-platform table:not(.ds-table) td {
+  color: var(--ds-text);
+}
+
+/* —— Status badge variants —— */
+.internai-platform .ds-status-neutral,
+.internai-home .ds-status-neutral {
+  background: var(--ds-surface-raised);
+  border-color: var(--ds-border-strong);
+  color: var(--ds-text-secondary);
+}
+
+.internai-platform .ds-status-info,
+.internai-home .ds-status-info {
+  background: rgba(30, 58, 95, 0.85);
+  border-color: rgba(147, 197, 253, 0.35);
+  color: #bfdbfe;
+}
+
+.internai-platform .ds-status-success,
+.internai-home .ds-status-success {
+  background: rgba(6, 78, 59, 0.75);
+  border-color: rgba(110, 231, 183, 0.35);
+  color: #a7f3d0;
+}
+
+.internai-platform .ds-status-warning,
+.internai-home .ds-status-warning {
+  background: rgba(120, 53, 15, 0.75);
+  border-color: rgba(251, 191, 36, 0.35);
+  color: #fde68a;
+}
+
+.internai-platform .ds-status-danger,
+.internai-home .ds-status-danger {
+  background: rgba(127, 29, 29, 0.75);
+  border-color: rgba(248, 113, 113, 0.35);
+  color: #fecaca;
+}
+
+/* Status badge text on dark fills only — skip buttons/tabs with pale backgrounds */
+.internai-platform
+  :is(span, p, div, td, th)[class*="text-slate-700"]:not([class*="bg-primary-100"]):not([class*="bg-primary-50"]):not(.bg-white),
+.internai-platform
+  :is(span, p, div)[class*="text-primary-700"]:not([class*="bg-primary-100"]):not([class*="bg-primary-50"]):not(.bg-white) {
+  color: var(--ds-text) !important;
+}
+
+.internai-platform
+  :is(span, p, div)[class*="dark:text-primary-300"]:not([class*="bg-primary-100"]):not([class*="bg-primary-50"]):not(.bg-white) {
+  color: var(--ds-text-secondary) !important;
+}
+
+/* —— Legacy text utilities (stronger muted) —— */
+.internai-platform .text-slate-600,
+.internai-platform .text-slate-500,
+.internai-platform .text-slate-400,
+.internai-platform .dark\:text-slate-300,
+.internai-platform .dark\:text-slate-400,
+.internai-platform .dark\:text-slate-500 {
+  color: var(--ds-text-secondary) !important;
+}
+
+.internai-platform .text-slate-700,
+.internai-platform .dark\:text-slate-200 {
+  color: var(--ds-text) !important;
+}
+
+/* —— Links —— */
+.internai-platform .text-link,
+.internai-platform .text-link-block,
+.internai-platform a.font-semibold.text-primary-600 {
+  color: var(--ds-accent) !important;
+}
+
+.internai-platform .text-link:hover,
+.internai-platform .text-link-block:hover {
+  color: var(--ds-accent-strong) !important;
+}
+
+/* —— Modals & overlays —— */
+.internai-platform [role="dialog"],
+.internai-platform .fixed.inset-0.z-50 + div,
+.internai-platform [class*="fixed"][class*="inset-0"][class*="z-50"] .surface-muted,
+.internai-platform [class*="fixed"][class*="inset-0"][class*="z-50"] .ds-card {
+  background: var(--ds-surface-raised) !important;
+  color: var(--ds-text);
+}
+
+.internai-platform [class*="bg-slate-900/"],
+.internai-platform [class*="bg-black/"] {
+  /* backdrop only — do not override opacity overlays */
+}
+
+/* —— Navbar (dark) — foreground only —— */
+.internai-home .internai-home-content > header .text-internai-muted,
+.internai-platform .internai-platform-content > header .text-internai-muted {
+  color: var(--ds-text-secondary) !important;
+}
+
+.internai-home .internai-home-content > header .text-internai-text,
+.internai-platform .internai-platform-content > header .text-internai-text,
+.internai-home .internai-home-content > header .text-internai-blue,
+.internai-platform .internai-platform-content > header .text-internai-blue {
+  color: var(--ds-accent-strong) !important;
+}
+
+/* —— OTP & password fields —— */
+.internai-platform input[type="password"],
+.internai-platform input[type="email"],
+.internai-platform input[type="tel"],
+.internai-platform input[type="search"] {
+  color: var(--ds-text);
+}
+
+/* —— Alerts —— */
+.internai-platform .ds-alert--success {
+  color: var(--ds-success);
+  border-color: rgba(110, 231, 183, 0.4);
+}
+
+.internai-platform .ds-alert--error {
+  color: var(--ds-danger);
+  border-color: rgba(248, 113, 113, 0.45);
+}
+
+/* —— Animation: ensure content ends fully visible —— */
+.internai-platform .ds-animate-in,
+.internai-platform .animate-reveal,
+.internai-home [class*="ScrollReveal"] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .internai-platform .ds-animate-in,
+  .internai-platform .animate-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Light-surface buttons & tabs — dark text/icons (foreground only)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --ds-on-light-text: #0f172a;
+  --ds-on-light-text-strong: #111827;
+  --ds-on-light-icon: #1e40af;
+  --ds-on-light-muted: #334155;
+  --ds-btn-fg-on-dark: #f3f4f6;
+  --ds-btn-fg-on-dark-hover: #eef4ff;
+  --ds-btn-fg-on-light: #0f172a;
+  --ds-btn-fg-on-light-hover: #111827;
+  --ds-btn-fg-on-brand: #ffffff;
+  --ds-btn-fg-ghost: #d1d9e3;
+  --ds-btn-fg-ghost-hover: #f3f4f6;
+}
+
+/* True light fills only (bg-primary-* is not remapped to dark surface) */
+.internai-platform
+  :is(button, [role="button"], [type="button"]):is(
+    [class*="bg-primary-50"],
+    [class*="bg-primary-100"]
+  ):not(aside nav a),
+.internai-platform
+  button[class*="hover:bg-primary-50"]:hover,
+.internai-platform
+  button[class*="hover:bg-primary-100"]:hover {
+  color: var(--ds-on-light-text) !important;
+}
+
+/* Sidebar nav — active pale fill (links only; not top navbar).
+   The "bg-primary-50" class name stays in the DOM even when dark:bg-primary-900
+   is the effective background, so this must not force dark text unconditionally
+   or the active item's label becomes unreadable once dark mode actually renders. */
+.internai-platform aside nav a[class*="bg-primary-50"]:not(.dark *) {
+  color: var(--ds-on-light-text) !important;
+}
+
+.internai-platform aside nav a[class*="bg-primary-50"]:not(.dark *) svg {
+  color: var(--ds-on-light-icon) !important;
+}
+
+.internai-platform.dark aside nav a[class*="bg-primary-50"],
+.dark .internai-platform aside nav a[class*="bg-primary-50"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform.dark aside nav a[class*="bg-primary-50"] svg,
+.dark .internai-platform aside nav a[class*="bg-primary-50"] svg {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+/* Active tabs (e.g. Education) — pale/transparent active fill */
+.internai-platform button.bg-primary-100,
+.internai-platform button[class*="bg-primary-100"],
+.internai-platform button[class*="bg-primary-900/40"],
+.internai-platform button[class*="bg-primary-900\/40"],
+.internai-platform button.dark\:bg-primary-900\/40 {
+  color: var(--ds-on-light-text) !important;
+}
+
+.internai-platform button.bg-primary-100:hover,
+.internai-platform button[class*="bg-primary-100"]:hover,
+.internai-platform button[class*="bg-primary-900"]:hover {
+  color: var(--ds-on-light-text-strong) !important;
+}
+
+/* Icons inside light buttons/tabs */
+.internai-platform
+  button:is(.bg-primary-100, [class*="bg-primary-100"], [class*="bg-primary-900"])
+  svg,
+.internai-platform
+  button:is(.bg-primary-100, [class*="bg-primary-100"], [class*="bg-primary-900"])
+  [class*="text-primary"],
+.internai-platform button.bg-slate-50 svg,
+.internai-platform span.bg-primary-100 svg,
+.internai-platform span[class*="bg-primary-100"] {
+  color: var(--ds-on-light-icon) !important;
+}
+
+/* Badges/pills on light fills */
+.internai-platform span.rounded-full.bg-primary-100,
+.internai-platform span.rounded-full[class*="bg-primary-100"],
+.internai-platform span.rounded-full.bg-primary-50,
+.internai-platform span.inline-flex.rounded-full.bg-primary-100,
+.internai-platform p.rounded-xl.bg-primary-50,
+.internai-platform div.rounded-lg.bg-slate-50,
+.internai-platform div.rounded-xl.bg-slate-50,
+.internai-platform div.border-dashed.bg-slate-50 {
+  color: var(--ds-on-light-text) !important;
+}
+
+.internai-platform span.rounded-full.bg-primary-100 *,
+.internai-platform span[class*="bg-primary-100"] {
+  color: inherit !important;
+}
+
+/* Company preset / bordered cards with pale fill (not converted to ds-surface) */
+.internai-platform
+  button[class*="border-primary"].bg-primary-50,
+.internai-platform
+  button[class*="border-primary"][class*="bg-primary-50"] {
+  color: var(--ds-on-light-text) !important;
+}
+
+/* Skill chips & similar controls on pale hover */
+.internai-platform
+  button.hover\:bg-primary-100:hover,
+.internai-platform
+  [class*="hover:bg-primary-100"]:hover {
+  color: var(--ds-on-light-text) !important;
+}
+
+/* Do not force light accent onto primary utility text on pale surfaces */
+.internai-platform
+  :is(button, span, a, p).bg-primary-100[class*="text-primary"],
+.internai-platform
+  :is(button, span).bg-primary-100 .text-primary-700,
+.internai-platform
+  :is(button, span).bg-primary-100 .text-primary-600,
+.internai-platform
+  :is(button, span)[class*="bg-primary-100"][class*="text-primary"],
+.internai-platform
+  :is(button, span)[class*="bg-primary-50"][class*="text-primary"],
+.internai-platform
+  button[class*="text-primary-700"].bg-primary-100,
+.internai-platform
+  button[class*="text-primary-700"][class*="bg-primary-900"] {
+  color: var(--ds-on-light-text) !important;
+}
+
+.internai-platform
+  :is(button, span)[class*="dark:text-primary-300"][class*="bg-primary"] {
+  color: var(--ds-on-light-text) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Application-wide button label contrast (foreground only)
+   Excludes: homepage/platform top header (navbar), aside nav links
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Protected: top menu bar / navbar — no button overrides */
+.internai-home .internai-home-content > header,
+.internai-home .internai-home-content > header *,
+.internai-platform main > header,
+.internai-platform main > header * {
+  /* inherit component styles */
+}
+
+/* Scope token for button audit */
+/* Primary / gradient / brand-filled controls → light label & icon */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="from-primary"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-gradient"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="text-white"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-600"] {
+  color: var(--ds-btn-fg-on-brand) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="from-primary"]
+  svg,
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="text-white"]
+  svg,
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-600"]
+  svg {
+  color: currentColor !important;
+}
+
+/* Secondary / white utility fill (renders as dark surface on platform) → light label */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-white"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d).border[class*="border-slate"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-white"]:hover,
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d).border[class*="border-slate"]:hover {
+  color: var(--ds-btn-fg-on-dark-hover) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-white"]
+  :is(p, span, .text-slate-900, .text-slate-700, .text-slate-600, .text-slate-500, [class*="text-slate-"]),
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a).border[class*="border-slate"][class*="bg-white"]
+  :is(p, span, [class*="text-slate-"]) {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+/* Pale primary fills (stay light on platform) → dark label, including nested text */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-50"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-100"] {
+  color: var(--ds-btn-fg-on-light) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-50"]
+  :is(p, span, svg, [class*="text-slate-"], [class*="text-primary-"], .dark\:text-primary-300),
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-100"]
+  :is(p, span, svg, [class*="text-slate-"], [class*="text-primary-"], .dark\:text-primary-300) {
+  color: var(--ds-btn-fg-on-light) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-50"]:hover,
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a)[class*="bg-primary-100"]:hover {
+  color: var(--ds-btn-fg-on-light-hover) !important;
+}
+
+/* Ghost / transparent buttons → readable on dark starfield */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-transparent"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="text-slate-500"]:not([class*="bg-primary-50"]):not([class*="bg-primary-100"]),
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="text-slate-700"]:not([class*="bg-primary-50"]):not([class*="bg-primary-100"]):not([class*="bg-white"]) {
+  color: var(--ds-btn-fg-ghost) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-transparent"]:hover,
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="hover:text-slate"]:hover {
+  color: var(--ds-btn-fg-ghost-hover) !important;
+}
+
+/* Plain action buttons (skill selector, lists, etc.) */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  button[type="button"][class*="rounded-lg"][class*="border"][class*="bg-white"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  button[type="button"][class*="rounded-lg"].border[class*="text-slate-900"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  button[type="button"][class*="rounded-lg"][class*="border"][class*="bg-white"]:hover {
+  color: var(--ds-btn-fg-on-dark-hover) !important;
+}
+
+/* Design-system button classes (if present) */
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn-primary,
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn-secondary,
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn-ghost {
+  opacity: 1;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn-primary {
+  color: var(--ds-btn-fg-on-brand) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn-secondary,
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn-ghost {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, header.ds-shell-header, [role="dialog"])
+  .ds-btn:disabled {
+  color: var(--ds-disabled-text) !important;
+}
+
+/* Homepage buttons (not platform shell) */
+.internai-home .hp-btn-primary,
+.internai-home .hp-btn-primary:hover {
+  color: var(--ds-accent-strong) !important;
+}
+
+.internai-home .hp-btn-ghost,
+.internai-home .hp-btn-ghost:hover {
+  color: var(--ds-text) !important;
+}
+
+.internai-home .hp-btn-ghost:hover {
+  color: var(--ds-accent-strong) !important;
+}
+
+/* ── Remapped dark fills (bg-white / bg-slate-* utilities → dark surface) ── */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-slate-50"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-slate-100"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="dark:bg-slate-900"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="dark:bg-slate-800"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+/* Chat / list controls without data-cursor */
+.internai-platform
+  main .ds-page-main
+  button[type="button"][class*="bg-primary-50"],
+.internai-platform
+  main .ds-page-main
+  button[type="button"][class*="bg-primary-100"],
+.internai-platform
+  main .ds-page-main
+  button[type="button"][class*="text-primary-8"],
+.internai-platform
+  main .ds-page-main
+  button[type="button"][class*="text-primary-7"][class*="bg-primary"] {
+  color: var(--ds-btn-fg-on-light) !important;
+}
+
+.internai-platform
+  main .ds-page-main
+  button[type="button"][class*="bg-primary-50"]
+  :is(p, span, [class*="text-slate-"], [class*="text-primary-"]),
+.internai-platform
+  main .ds-page-main
+  button[type="button"][class*="bg-primary-100"]
+  :is(p, span, [class*="text-slate-"], [class*="text-primary-"]) {
+  color: var(--ds-btn-fg-on-light) !important;
+}
+
+.internai-platform
+  main .ds-page-main
+  button[type="button"]:not([class*="bg-primary-50"]):not([class*="bg-primary-100"]):not([class*="bg-primary-6"]):not(
+      [class*="from-primary"]
+    ):not([class*="bg-white"]):not([class*="inset-0"]):not([aria-label="Close menu"]) {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform
+  main .ds-page-main
+  button[type="button"]:not([class*="bg-primary-50"]):not([class*="bg-primary-100"]):not([class*="inset-0"]):hover {
+  color: var(--ds-btn-fg-on-dark-hover) !important;
+}
+
+/* Shell header icon controls (not top navbar) */
+.internai-platform header.ds-shell-header button[class*="rounded-xl"],
+.internai-platform header.ds-shell-header button[class*="rounded-lg"]:not([aria-label="Open menu"]) {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform header.ds-shell-header button[class*="rounded-xl"] svg,
+.internai-platform header.ds-shell-header button[class*="rounded-lg"] svg {
+  color: currentColor !important;
+}
+
+/* Accent / link-style controls on dark surfaces */
+.internai-platform
+  :is(main section, main .ds-page-main, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="text-primary-6"]:not([class*="bg-primary-50"]):not([class*="bg-primary-100"]),
+.internai-platform
+  :is(main section, main .ds-page-main, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="text-primary-7"]:not([class*="bg-primary-50"]):not([class*="bg-primary-100"]) {
+  color: var(--ds-accent) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="text-primary-6"]:hover,
+.internai-platform
+  :is(main section, main .ds-page-main, [role="dialog"])
+  :is(button, a[data-cursor="button"])[class*="text-primary-7"]:hover {
+  color: var(--ds-accent-strong) !important;
+}
+
+/* Defeat platform .text-slate-* overrides on button labels */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="text-slate-900"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="text-slate-800"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="dark:text-slate-100"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)[class*="bg-white"][class*="text-slate-900"],
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d).border[class*="text-slate-900"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+/* Disabled — readable, no faded opacity */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d):disabled,
+.internai-platform
+  main .ds-page-main
+  button[type="button"]:disabled:not([class*="inset-0"]) {
+  opacity: 1 !important;
+  color: var(--ds-disabled-text) !important;
+  cursor: not-allowed;
+}
+
+/* Icons follow button label */
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)
+  svg,
+.internai-platform
+  :is(main section, main .ds-page-main, main .ds-page-section, main .container-shell, header.ds-shell-header, [role="dialog"])
+  :is(button, a[data-cursor="button"], a.tilt-3d)
+  [class*="text-current"] {
+  color: currentColor !important;
+  opacity: 1 !important;
+}
+
+/* Role selector (auth) */
+.internai-platform main section button[class*="bg-white"][class*="text-slate-900"],
+.internai-platform main section button[class*="dark:bg-slate-900"][class*="dark:text-slate-100"] {
+  color: var(--ds-btn-fg-on-dark) !important;
+}
+
+.internai-platform main section .grid button[class*="text-slate-500"],
+.internai-platform main section .grid button[class*="text-slate-400"] {
+  color: var(--ds-btn-fg-ghost) !important;
+}
+
+.internai-platform main section .grid button[class*="text-slate-500"]:hover,
+.internai-platform main section .grid button[class*="hover:text-slate-7"]:hover {
+  color: var(--ds-btn-fg-ghost-hover) !important;
+}
+
+/* ═══ Intern Profile — tile text readability (foreground only) ═══ */
+.internai-platform .intern-profile-page {
+  color: var(--ds-text);
+}
+
+.internai-platform .intern-profile-page .surface-subtle,
+.internai-platform .intern-profile-page .surface-muted {
+  color: var(--ds-text);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.internai-platform .intern-profile-page .surface-subtle :is(p, li, span, div),
+.internai-platform .intern-profile-page .surface-muted :is(p, li) {
+  line-height: 1.55;
+}
+
+.internai-platform .intern-profile-page .text-slate-900,
+.internai-platform .intern-profile-page .dark\:text-slate-100 {
+  color: var(--ds-text) !important;
+}
+
+.internai-platform .intern-profile-page p[class*="uppercase"][class*="tracking"] {
+  color: var(--ds-muted) !important;
+  font-weight: 600;
+}
+
+.internai-platform .intern-profile-page .text-slate-500,
+.internai-platform .intern-profile-page .text-slate-600,
+.internai-platform .intern-profile-page .text-slate-700,
+.internai-platform .intern-profile-page .dark\:text-slate-200,
+.internai-platform .intern-profile-page .dark\:text-slate-300 {
+  color: var(--ds-text-secondary) !important;
+}
+
+.internai-platform .intern-profile-page .ds-card {
+  color: var(--ds-text);
+}
+
+/* Skill chips — force readable contrast; immune to profile text remaps */
+.internai-platform .skill-chip {
+  color: var(--ds-text) !important;
+  background: var(--ds-surface-raised) !important;
+  border-color: var(--ds-border-strong) !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: var(--ds-text);
+}
+
+.internai-platform .skill-chip:hover {
+  color: var(--ds-accent-strong) !important;
+  background: var(--ds-surface-hover) !important;
+  border-color: var(--ds-border-strong) !important;
+  -webkit-text-fill-color: var(--ds-accent-strong);
+}
+
+.internai-platform .intern-profile-page .skill-chip,
+.internai-platform .intern-profile-page .skill-chip:hover {
+  opacity: 1 !important;
+}
+

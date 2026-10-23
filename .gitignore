@@ -1,18 +1,45 @@
-.env
-.env.local
-.env.*.local
+﻿# Dependencies
 node_modules/
-client/node_modules/
-server/node_modules/
-client/dist/
-server/dist/
+
+# Build output
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# Environment files (real values never committed; *.example templates are)
+.env
+.env.*
+!.env.example
+
+# Runtime user uploads (resumes, certificates, logos) - personal data
+backend/uploads/
+backend/src/modules/uploads/*
+!backend/src/modules/uploads/.gitkeep
+
+# Test artifacts
+coverage/
+test-results/
+playwright-report/
+deployment-guard/last-report.json
+
+# Logs
 *.log
+
+# OS / editor / AI-tool config
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+.claude/
 .cursor/
-.vercel
-server/uploads/
-/*.pdf
-graphify-out/
+.windsurf/
+.opencode/
+.codex/
+.agents/
+.clinerules/
+.tokensave/
+
+# Python cache
+__pycache__/
+*.pyc

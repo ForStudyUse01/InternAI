@@ -1,0 +1,15 @@
+{
+  "name": "internai-platform",
+  "private": true,
+  "version": "1.0.0",
+  "description": "InternAI internship platform",
+  "scripts": {
+    "deploy:guard": "node deployment-guard/run.mjs",
+    "deploy:guard:frontend": "node deployment-guard/run.mjs --target=frontend",
+    "deploy:guard:backend": "node deployment-guard/run.mjs --target=backend",
+    "deploy:guard:json": "node deployment-guard/run.mjs --json",
+    "predeploy": "node deployment-guard/run.mjs",
+    "build:frontend": "npm run deploy:guard:frontend && npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend run start"
+  }
+}

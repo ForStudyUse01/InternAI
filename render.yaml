@@ -1,44 +1,50 @@
 services:
   - type: web
-    name: internai-backend
-    runtime: node
-    rootDir: server
-    buildCommand: npm install && npm run build
-    startCommand: npm run start
+    name: internai-api
+    env: node
     plan: free
-    autoDeploy: true
+    buildCommand: node ../deployment-guard/run.mjs --target=backend && npm install
+    startCommand: npm start
+    rootDir: backend
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 5000
+      - key: DEPLOY_TARGET
+        value: render
+      - key: AI_PREFER_LOCAL_HEURISTICS
+        value: true
+      - key: AI_REQUESTS_PER_MINUTE
+        value: 10
+      - key: ENABLE_CHAT
+        value: true
+      - key: ENABLE_INTERVIEW_ROOMS
+        value: true
+      - key: REDIS_ENABLED
+        value: true
+      - key: STORAGE_PROVIDER
+        value: cloudinary
       - key: MONGO_URI
         sync: false
-      - key: JWT_ACCESS_SECRET
+      - key: JWT_SECRET
         sync: false
-      - key: JWT_ACCESS_EXPIRES_IN
-        value: 1d
-      - key: OTP_PROVIDER
-        value: mock
-      - key: OTP_LENGTH
-        value: 6
-      - key: OTP_TTL_MINUTES
-        value: 10
-      - key: SMTP_HOST
+      - key: JWT_REFRESH_SECRET
         sync: false
-      - key: SMTP_PORT
+      - key: CLIENT_URL
         sync: false
-      - key: SMTP_USER
+      - key: UPSTASH_REDIS_REST_URL
         sync: false
-      - key: SMTP_PASS
+      - key: UPSTASH_REDIS_REST_TOKEN
         sync: false
-      - key: SMTP_FROM
+      - key: GROQ_API_KEY
         sync: false
-      - key: RESUME_MAX_FILE_SIZE_MB
-        value: 5
-      - key: RESUME_UPLOAD_DIR
-        value: uploads/resumes
-      - key: REQUEST_TIMEOUT_MS
-        value: 30000
-      - key: CLIENT_ORIGIN
+      - key: HUGGINGFACE_API_KEY
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: NEON_DATABASE_URL
         sync: false

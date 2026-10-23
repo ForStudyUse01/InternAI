@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000c13" />
+    <title>Offline — InternAI</title>
+    <style>
+      :root {
+        --bg: #000c13;
+        --card: #06131c;
+        --border: #293c49;
+        --text: #fcfcfb;
+        --muted: #868b8e;
+        --primary: #0274bd;
+        --primary-hover: #2a8ac8;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        -webkit-font-smoothing: antialiased;
+      }
+      main {
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 20px;
+        padding: 40px 28px;
+      }
+      img { width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 20px; display: block; }
+      h1 { font-size: 20px; line-height: 1.3; margin: 0 0 10px; font-weight: 600; }
+      p { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0 0 24px; }
+      button {
+        appearance: none;
+        border: 0;
+        cursor: pointer;
+        background: var(--primary);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 12px 22px;
+        border-radius: 12px;
+        min-height: 44px;
+        transition: background 150ms ease;
+      }
+      button:hover { background: var(--primary-hover); }
+      button:disabled { opacity: 0.6; cursor: default; }
+      .status {
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: #b45309; display: inline-block; }
+      .dot.online { background: #16a34a; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/icons/icon-192.png" alt="InternAI" />
+      <h1>You're offline</h1>
+      <p>InternAI can't reach the network right now. Check your connection — cached pages still work, and this page reloads automatically when you're back online.</p>
+      <button id="retry" type="button">Try again</button>
+      <div class="status"><span id="dot" class="dot"></span><span id="statusText">Waiting for connection…</span></div>
+    </main>
+    <script>
+      (function () {
+        var retry = document.getElementById("retry");
+        var dot = document.getElementById("dot");
+        var statusText = document.getElementById("statusText");
+
+        function setOnline(isOnline) {
+          if (isOnline) {
+            dot.classList.add("online");
+            statusText.textContent = "Back online — reloading…";
+          } else {
+            dot.classList.remove("online");
+            statusText.textContent = "Waiting for connection…";
+          }
+        }
+
+        function attemptReload() {
+          retry.disabled = true;
+          retry.textContent = "Checking…";
+          // Cache-busting HEAD-ish probe of a tiny same-origin asset.
+          fetch("/manifest.webmanifest", { method: "GET", cache: "no-store" })
+            .then(function () {
+              setOnline(true);
+              window.location.reload();
+            })
+            .catch(function () {
+              retry.disabled = false;
+              retry.textContent = "Try again";
+              setOnline(false);
+            });
+        }
+
+        retry.addEventListener("click", attemptReload);
+        window.addEventListener("online", function () {
+          setOnline(true);
+          window.location.reload();
+        });
+        window.addEventListener("offline", function () { setOnline(false); });
+        setOnline(navigator.onLine);
+      })();
+    </script>
+  </body>
+</html>

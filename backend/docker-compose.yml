@@ -1,0 +1,26 @@
+﻿version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-internship-api
+    env_file:
+      - .env
+    environment:
+      - SCORER_ENABLED=true
+      - SCORER_BASE_URL=http://scorer:5002
+      - SCORER_TIMEOUT_MS=7000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - scorer
+
+  scorer:
+    build:
+      context: ./scorer
+      dockerfile: Dockerfile
+    container_name: ai-internship-scorer
+    ports:
+      - "5002:5002"

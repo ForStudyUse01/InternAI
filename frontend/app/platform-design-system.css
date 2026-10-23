@@ -1,0 +1,770 @@
+/* InternAI platform design system — mirrors homepage.css tokens (homepage unchanged) */
+
+/* Color tokens (--ds-bg, --ds-surface, --ds-text, --ds-primary, --ds-accent, etc.)
+   are theme-driven and defined in theme-tokens.generated.css — see
+   scripts/generate-theme-tokens.mjs and lib/theme/palettes.json. Only
+   non-color layout tokens live here. */
+:root {
+  --ds-mid: #1b2735;
+  --ds-radius: 0.625rem;
+  --ds-radius-sm: 0.5rem;
+  --ds-gap-section: 1.5rem;
+  --ds-gap-page: 1.25rem;
+  --ds-font: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html:has(.internai-platform),
+body:has(.internai-platform) {
+  background: transparent;
+}
+
+.internai-platform {
+  color: var(--ds-text);
+  font-family: var(--ds-font);
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.internai-platform-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+
+.internai-platform-content > header {
+  z-index: 50;
+  border-color: var(--ds-border) !important;
+  background: var(--ds-navbar) !important;
+  box-shadow: inset 0 -1px 0 var(--ds-border);
+}
+
+.internai-platform-content > footer {
+  z-index: 40;
+  border-color: var(--ds-border) !important;
+  background: var(--ds-navbar) !important;
+  box-shadow: inset 0 1px 0 var(--ds-border);
+}
+
+/* Typography */
+.internai-platform .ds-label,
+.internai-platform .hp-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+  line-height: 1.4;
+}
+
+.internai-platform .ds-h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-h2 {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-body {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-caption,
+.internai-platform .ds-sub {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ds-text-secondary, var(--ds-muted));
+}
+
+/* Surfaces & cards */
+.internai-platform .ds-surface,
+.internai-platform .hp-surface,
+.internai-platform .ds-card,
+.internai-platform .surface-muted,
+.internai-platform .surface-card,
+.internai-platform .surface-subtle {
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius);
+  background: var(--ds-surface);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16), 0 10px 28px -14px rgba(0, 0, 0, 0.4);
+  background-image: none;
+}
+
+.internai-platform .ds-card,
+.internai-platform .surface-muted {
+  position: relative;
+  padding: 1.25rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.internai-platform .ds-card:hover,
+.internai-platform .ds-surface--interactive:hover,
+.internai-platform .hp-surface--interactive:hover {
+  border-color: var(--ds-border-strong);
+  background: var(--ds-surface-raised);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.2), 0 16px 36px -16px rgba(0, 0, 0, 0.48);
+}
+
+.internai-platform .ds-card > .pointer-events-none {
+  display: none;
+}
+
+/* Buttons */
+.internai-platform .ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--ds-radius-sm);
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.internai-platform .ds-btn:focus-visible {
+  outline: 2px solid var(--ds-border-strong);
+  outline-offset: 2px;
+}
+
+.internai-platform .ds-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.internai-platform .ds-btn-primary {
+  border: 1px solid var(--ds-border-strong);
+  background: var(--ds-surface-raised);
+  color: var(--ds-accent);
+}
+
+.internai-platform .ds-btn-primary:hover:not(:disabled) {
+  background: rgba(35, 48, 68, 0.9);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.internai-platform .ds-btn-secondary {
+  border: 1px solid var(--ds-border);
+  background: transparent;
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-btn-secondary:hover:not(:disabled) {
+  background: var(--ds-surface);
+  border-color: var(--ds-border-strong);
+}
+
+.internai-platform .ds-btn-ghost {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ds-muted);
+}
+
+.internai-platform .ds-btn-ghost:hover:not(:disabled) {
+  background: var(--ds-surface);
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-btn-danger {
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  background: var(--ds-danger-bg);
+  color: var(--ds-danger);
+}
+
+.internai-platform .ds-btn-danger:hover:not(:disabled) {
+  background: rgba(127, 29, 29, 0.5);
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.internai-platform .ds-btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+}
+
+.internai-platform .ds-btn-lg {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.0625rem;
+}
+
+/* Inputs */
+.internai-platform .ds-input,
+.internai-platform .ds-textarea,
+.internai-platform .ds-select {
+  width: 100%;
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-sm);
+  background: var(--ds-surface);
+  color: var(--ds-text);
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.internai-platform .ds-input,
+.internai-platform .ds-select {
+  height: 2.75rem;
+  padding: 0 0.85rem;
+}
+
+.internai-platform .ds-textarea {
+  min-height: 6rem;
+  padding: 0.75rem 0.85rem;
+  resize: vertical;
+}
+
+.internai-platform .ds-input::placeholder,
+.internai-platform .ds-textarea::placeholder {
+  color: var(--ds-muted);
+  opacity: 0.85;
+}
+
+.internai-platform .ds-input:focus,
+.internai-platform .ds-textarea:focus,
+.internai-platform .ds-select:focus {
+  outline: none;
+  border-color: var(--ds-border-strong);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+
+.internai-platform .ds-input:disabled,
+.internai-platform .ds-textarea:disabled,
+.internai-platform .ds-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--ds-surface);
+}
+
+.internai-platform .ds-input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ds-muted);
+}
+
+.internai-platform .ds-input-error {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--ds-danger);
+}
+
+/* Alerts */
+.internai-platform .ds-alert {
+  border-radius: var(--ds-radius-sm);
+  border: 1px solid var(--ds-border);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+.internai-platform .ds-alert--success {
+  border-color: rgba(110, 231, 183, 0.25);
+  background: var(--ds-success-bg);
+  color: var(--ds-success);
+}
+
+.internai-platform .ds-alert--error {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: var(--ds-danger-bg);
+  color: var(--ds-danger);
+}
+
+/* Tables */
+.internai-platform .ds-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius);
+  background: var(--ds-surface);
+}
+
+.internai-platform .ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.internai-platform .ds-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+  border-bottom: 1px solid var(--ds-border);
+  background: var(--ds-surface-raised);
+}
+
+.internai-platform .ds-table td {
+  padding: 0.75rem 1rem;
+  color: var(--ds-text);
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.internai-platform .ds-table tr:last-child td {
+  border-bottom: none;
+}
+
+.internai-platform .ds-table tbody tr:hover td {
+  background: var(--ds-surface-hover);
+}
+
+/* Stat cards */
+.internai-platform .ds-stat-card {
+  padding: 1.15rem 1.25rem;
+}
+
+.internai-platform .ds-stat-card .ds-stat-value {
+  margin-top: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-stat-card .ds-stat-icon {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ds-radius-sm);
+  border: 1px solid var(--ds-border);
+  background: var(--ds-surface-raised);
+  color: var(--ds-accent);
+}
+
+/* Dashboard shell */
+.internai-platform .ds-dashboard-layout {
+  min-height: 100vh;
+}
+
+.internai-platform .ds-sidebar {
+  border-right: 1px solid var(--ds-border);
+  background: rgba(9, 10, 15, 0.72);
+  box-shadow: inset -1px 0 0 var(--ds-border);
+}
+
+.internai-platform .ds-shell-header {
+  border-bottom: 1px solid var(--ds-border);
+  background: rgba(9, 10, 15, 0.82);
+  box-shadow: inset 0 -1px 0 var(--ds-border);
+}
+
+.internai-platform .ds-nav-section-label {
+  padding: 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+}
+
+.internai-platform .ds-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: var(--ds-radius-sm);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ds-muted);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.internai-platform .ds-nav-link:hover {
+  background: var(--ds-surface);
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-nav-link.is-active {
+  border: 1px solid var(--ds-border-strong);
+  background: var(--ds-surface-raised);
+  color: var(--ds-accent);
+}
+
+.internai-platform .ds-page-main {
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .internai-platform .ds-page-main {
+    padding: 1.25rem 1.5rem 2rem;
+  }
+}
+
+.internai-platform .ds-page-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.internai-platform .dashboard-stack {
+  gap: var(--ds-gap-section);
+}
+
+.internai-platform .ds-icon-btn {
+  position: relative;
+  border-radius: var(--ds-radius-sm);
+  border: 1px solid var(--ds-border);
+  background: var(--ds-surface);
+  padding: 0.5rem;
+  color: var(--ds-muted);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.internai-platform .ds-icon-btn:hover {
+  border-color: var(--ds-border-strong);
+  background: var(--ds-surface-raised);
+  color: var(--ds-text);
+}
+
+.internai-platform .ds-icon-btn:focus-visible {
+  outline: 2px solid var(--ds-border-strong);
+  outline-offset: 2px;
+}
+
+.internai-platform .ds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  padding: 0 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  background: var(--ds-surface-raised);
+  border: 1px solid var(--ds-border-strong);
+  color: var(--ds-accent);
+}
+
+/* Animations */
+@keyframes ds-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.internai-platform .ds-animate-in,
+.internai-platform .animate-reveal {
+  animation: ds-fade-up 0.5s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .internai-platform .ds-animate-in,
+  .internai-platform .animate-reveal {
+    animation: none;
+  }
+}
+
+/* Legacy utility overrides inside platform */
+.internai-platform .text-slate-900,
+.internai-platform .text-slate-100,
+.internai-platform .text-ink,
+.internai-platform .dark\:text-slate-100 {
+  color: var(--ds-text) !important;
+}
+
+.internai-platform .text-slate-600,
+.internai-platform .text-slate-500,
+.internai-platform .text-slate-400,
+.internai-platform .dark\:text-slate-300,
+.internai-platform .dark\:text-slate-400 {
+  color: var(--ds-muted) !important;
+}
+
+/* Primary text: light accent on dark surfaces only (not on light buttons/tabs) */
+.internai-platform a.text-primary-600,
+.internai-platform a.text-primary-700,
+.internai-platform .text-link.text-primary-600 {
+  color: var(--ds-accent);
+}
+
+.internai-platform .border-slate-200,
+.internai-platform .border-slate-700,
+.internai-platform .border-slate-800,
+.internai-platform .dark\:border-slate-700,
+.internai-platform .dark\:border-slate-800 {
+  border-color: var(--ds-border) !important;
+}
+
+.internai-platform .bg-white,
+.internai-platform .bg-slate-50,
+.internai-platform .bg-slate-900,
+.internai-platform .bg-slate-950,
+.internai-platform .dark\:bg-slate-900,
+.internai-platform .dark\:bg-slate-950,
+.internai-platform .from-white,
+.internai-platform .to-slate-50,
+.internai-platform .from-slate-900,
+.internai-platform .to-slate-800 {
+  background: var(--ds-surface) !important;
+  background-image: none !important;
+}
+
+.internai-platform .text-link,
+.internai-platform .text-link-block {
+  color: var(--ds-accent);
+  text-decoration-color: rgba(200, 220, 255, 0.4);
+}
+
+.internai-platform .text-link:hover,
+.internai-platform .text-link-block:hover {
+  color: var(--ds-text);
+}
+
+/* Company dashboard layout system */
+.internai-platform .company-dashboard-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-gap-section);
+}
+
+.internai-platform .company-dashboard-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .internai-platform .company-dashboard-grid {
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
+}
+
+.internai-platform .company-dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-gap-section);
+  min-width: 0;
+}
+
+.internai-platform .company-dashboard-sidebar {
+  min-width: 0;
+}
+
+/* Chat module — structural/scroll plumbing only. Bubble colors and text
+   colors are owned by the component (dark-mode aware Tailwind classes);
+   do NOT hardcode colors here with !important, it silently defeats every
+   future style change made in chat-thread-panel.tsx / chat-list-panel.tsx. */
+.internai-platform [data-chat-ui] .chat-bubble-mine a,
+.internai-platform [data-chat-ui] .chat-bubble-theirs a {
+  text-decoration: none;
+}
+
+.internai-platform [data-chat-workspace] {
+  display: flex;
+  flex-direction: column;
+}
+
+.internai-platform [data-chat-ui] {
+  display: grid;
+  flex: 1 1 auto;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.internai-platform [data-chat-ui] > * {
+  min-height: 0;
+}
+
+.internai-platform [data-chat-ui] [data-chat-messages] {
+  min-height: 0;
+  flex: 1 1 auto;
+  overscroll-behavior: contain;
+}
+
+.internai-platform [data-chat-ui] [data-chat-composer] {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .internai-platform .company-dashboard-sidebar {
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+  }
+}
+
+.internai-platform .company-dashboard-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.internai-platform .company-dashboard-section-actions {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.internai-platform .company-dashboard-section-content {
+  min-width: 0;
+}
+
+.internai-platform .company-dashboard-panel-card,
+.internai-platform .company-dashboard-item-card {
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius);
+  background: var(--ds-surface);
+  padding: 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16), 0 10px 28px -14px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.internai-platform .company-dashboard-item-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.internai-platform .company-dashboard-item-card:hover {
+  border-color: var(--ds-border-strong);
+  background: var(--ds-surface-raised);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.2), 0 16px 36px -16px rgba(0, 0, 0, 0.48);
+}
+
+.internai-platform .company-dashboard-item-card--highlight {
+  border-color: rgba(110, 231, 183, 0.45);
+  box-shadow: inset 0 0 0 1px rgba(110, 231, 183, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 1px 2px rgba(0, 0, 0, 0.16), 0 10px 28px -14px rgba(0, 0, 0, 0.4);
+}
+
+.internai-platform .company-dashboard-card-grid {
+  display: grid;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .internai-platform .company-dashboard-card-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .internai-platform .company-dashboard-card-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.internai-platform .company-dashboard-list-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.internai-platform .company-dashboard-metric-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .internai-platform .company-dashboard-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .internai-platform .company-dashboard-metric-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .internai-platform .company-dashboard-metric-grid--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.internai-platform .company-dashboard-metric-tile {
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-sm);
+  background: var(--ds-surface);
+  padding: 0.875rem 1rem;
+}
+
+.internai-platform .company-dashboard-actions-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: auto;
+  border-top: 1px solid var(--ds-border);
+  padding-top: 0.875rem;
+}
+
+.internai-platform .company-dashboard-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.internai-platform .company-dashboard-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.internai-platform .company-dashboard-hero-accent .company-dashboard-section-content,
+.internai-platform .company-dashboard-hero-accent .ds-stat-card {
+  position: relative;
+}
+
+.internai-platform .company-dashboard-hero-accent .ds-stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.internai-platform .company-dashboard-hero-accent .ds-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.internai-platform .company-dashboard-kpi-accent {
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.08), rgba(15, 23, 42, 0.02));
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.internai-platform .company-dashboard-kpi-accent:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+.internai-platform .interview-countdown-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.internai-platform .interview-countdown-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.12);
+}

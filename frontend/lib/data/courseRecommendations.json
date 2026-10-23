@@ -1,0 +1,674 @@
+{
+  "Python": {
+    "beginner": [
+      { "title": "Python (Kaggle Learn)", "provider": "Kaggle Learn", "duration": "4 hours", "level": "Beginner", "description": "Learn Python programming from scratch: syntax, lists, loops, and functions.", "url": "https://www.kaggle.com/learn/python" },
+      { "title": "Scientific Computing with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "Python fundamentals, functions, data structures, and OOP — freeCodeCamp certification path.", "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/" },
+      { "title": "Programming in Python", "provider": "NPTEL", "duration": "12 weeks", "level": "Beginner", "description": "NPTEL IIT course covering Python basics to data handling.", "url": "https://onlinecourses.nptel.ac.in/noc19_cs55/preview" },
+      { "title": "Python Tutorial", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "The official Python 3 tutorial covering all core language features.", "url": "https://docs.python.org/3/tutorial/" }
+    ],
+    "intermediate": [
+      { "title": "Python for Data Science", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "Python applied to data structures, algorithms, and scientific computing.", "url": "https://onlinecourses.nptel.ac.in/noc24_cs78/preview" },
+      { "title": "Python Data Science (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "Applied Python workflows for data preparation, Pandas, and NumPy.", "url": "https://onlinecourses.nptel.ac.in/noc26_cs80/preview" },
+      { "title": "Python Class — Google", "provider": "Google Learn", "duration": "2 days", "level": "Intermediate", "description": "Google's intensive Python class with exercises and videos.", "url": "https://developers.google.com/edu/python" }
+    ],
+    "advanced": [
+      { "title": "Data Analysis with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Advanced", "description": "Advanced Python data analysis with NumPy, Pandas, Matplotlib — certification included.", "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/" }
+    ]
+  },
+
+  "Java": {
+    "beginner": [
+      { "title": "Java Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Beginner", "description": "Core Java programming: syntax, classes, OOP principles.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs87/preview" },
+      { "title": "Java Tutorial", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Oracle Java tutorials covering language basics to APIs.", "url": "https://docs.oracle.com/javase/tutorial/" },
+      { "title": "CS50 — Introduction to Computer Science", "provider": "Harvard Online Learning", "duration": "13 weeks", "level": "Beginner", "description": "Harvard's intro CS course — covers C and Java concepts for problem-solving.", "url": "https://pll.harvard.edu/course/cs50-introduction-computer-science" }
+    ],
+    "intermediate": [
+      { "title": "Object Oriented Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "OOP patterns and design principles in Java — NPTEL IIT course.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs101/preview" },
+      { "title": "Back End Development and APIs", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Server-side development concepts applicable to Java backend work.", "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/" }
+    ],
+    "advanced": [
+      { "title": "Design and Analysis of Algorithms (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Algorithm design, complexity, and optimization — essential for Java development.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs102/preview" }
+    ]
+  },
+
+  "C": {
+    "beginner": [
+      { "title": "C Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Beginner", "description": "Structured C programming: variables, control flow, arrays, functions, pointers.", "url": "https://onlinecourses.nptel.ac.in/noc20_cs50/preview" },
+      { "title": "CS50 — Introduction to Computer Science", "provider": "Harvard Online Learning", "duration": "13 weeks", "level": "Beginner", "description": "Harvard CS50 — teaches C from scratch with problem sets.", "url": "https://pll.harvard.edu/course/cs50-introduction-computer-science" },
+      { "title": "C Language Reference", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Complete C language reference at cppreference.com.", "url": "https://en.cppreference.com/w/c/language" }
+    ],
+    "intermediate": [
+      { "title": "Operating Systems (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "OS concepts — memory management, processes, file systems — closely tied to C.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs104/preview" }
+    ],
+    "advanced": [
+      { "title": "Design and Analysis of Algorithms (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced algorithm design and complexity analysis using C/C++.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs102/preview" },
+      { "title": "MIT OS Engineering", "provider": "MIT OpenCourseWare", "duration": "14 weeks", "level": "Advanced", "description": "MIT's operating system engineering course — kernel-level C programming.", "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/" }
+    ]
+  },
+
+  "C++": {
+    "beginner": [
+      { "title": "C++ Reference", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Complete C++ language and standard library reference at cppreference.com.", "url": "https://en.cppreference.com/w/" },
+      { "title": "CS50 — Introduction to Computer Science", "provider": "Harvard Online Learning", "duration": "13 weeks", "level": "Beginner", "description": "Harvard CS50 — covers C which directly applies to C++ fundamentals.", "url": "https://pll.harvard.edu/course/cs50-introduction-computer-science" }
+    ],
+    "intermediate": [
+      { "title": "C++ Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "NPTEL course on C++ covering classes, templates, STL, and OOP.", "url": "https://onlinecourses.nptel.ac.in/noc20_cs49/preview" },
+      { "title": "Object Oriented Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "OOP design patterns and principles applicable to C++.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs101/preview" }
+    ],
+    "advanced": [
+      { "title": "Design and Analysis of Algorithms (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Algorithm design and complexity — deeply integrated with C++ STL.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs102/preview" }
+    ]
+  },
+
+  "JavaScript": {
+    "beginner": [
+      { "title": "JavaScript Essentials", "provider": "Cisco Skills For All", "duration": "70 hours", "level": "Beginner", "description": "JavaScript basics: variables, functions, DOM, events.", "url": "https://skillsforall.com/course/javascript-essentials-1" },
+      { "title": "JavaScript Guide", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official MDN JavaScript language guide covering all core concepts.", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" }
+    ],
+    "intermediate": [
+      { "title": "JavaScript Algorithms and Data Structures", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "ES6+, regex, debugging, data structures, algorithms — full certification.", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/" },
+      { "title": "Modern Application Development (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "Full-stack web development including JavaScript, React, and REST APIs.", "url": "https://onlinecourses.nptel.ac.in/noc20_cs52/preview" }
+    ],
+    "advanced": [
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Advanced", "description": "University of Helsinki's deep-dive into modern JavaScript: React, Node, TypeScript, GraphQL.", "url": "https://fullstackopen.com/en/" }
+    ]
+  },
+
+  "TypeScript": {
+    "beginner": [
+      { "title": "TypeScript Handbook", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official TypeScript handbook — types, interfaces, generics, and compiler config.", "url": "https://www.typescriptlang.org/docs/handbook/intro.html" },
+      { "title": "JavaScript Essentials", "provider": "Cisco Skills For All", "duration": "70 hours", "level": "Beginner", "description": "JavaScript foundation required before learning TypeScript.", "url": "https://skillsforall.com/course/javascript-essentials-1" }
+    ],
+    "intermediate": [
+      { "title": "Front End Development Libraries", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "React + Redux with TypeScript patterns — full freeCodeCamp certification.", "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/" },
+      { "title": "React Basics", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "React components and hooks — directly applicable to TypeScript React projects.", "url": "https://www.coursera.org/learn/react-basics" }
+    ],
+    "advanced": [
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Advanced", "description": "Deep TypeScript usage in React, Node.js, and GraphQL full-stack projects.", "url": "https://fullstackopen.com/en/" }
+    ]
+  },
+
+  "HTML": {
+    "beginner": [
+      { "title": "Introduction to HTML5", "provider": "Coursera", "duration": "3 weeks", "level": "Beginner", "description": "University of Michigan — HTML5 structure, semantic elements, forms.", "url": "https://www.coursera.org/learn/html" },
+      { "title": "HTML", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Complete MDN HTML reference and guides for web development.", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML" }
+    ],
+    "intermediate": [
+      { "title": "Responsive Web Design", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "HTML5 + CSS — responsive layouts, accessibility, certification included.", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/" }
+    ],
+    "advanced": [
+      { "title": "Modern Application Development (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Full-stack web app development — advanced HTML5 APIs in production apps.", "url": "https://onlinecourses.nptel.ac.in/noc20_cs52/preview" }
+    ]
+  },
+
+  "CSS": {
+    "beginner": [
+      { "title": "CSS", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Complete MDN CSS reference — selectors, box model, layout.", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { "title": "Learn CSS", "provider": "Google Learn", "duration": "Self-paced", "level": "Beginner", "description": "Google Web Dev course — comprehensive CSS from box model to animations.", "url": "https://web.dev/learn/css/" }
+    ],
+    "intermediate": [
+      { "title": "Responsive Web Design", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "CSS grid, flexbox, responsive patterns — full freeCodeCamp certification.", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/" }
+    ],
+    "advanced": [
+      { "title": "UI Design", "provider": "Google Learn", "duration": "Self-paced", "level": "Advanced", "description": "Advanced UI patterns, accessibility, and design systems with CSS.", "url": "https://web.dev/learn/design/" }
+    ]
+  },
+
+  "React": {
+    "beginner": [
+      { "title": "React — Quick Start", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official React docs — components, JSX, props, state, and hooks.", "url": "https://react.dev/learn" },
+      { "title": "React Basics", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Meta React course — components, state management, event handling.", "url": "https://www.coursera.org/learn/react-basics" }
+    ],
+    "intermediate": [
+      { "title": "Front End Development Libraries", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "React, Redux, Bootstrap — build dynamic front-end applications.", "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/" },
+      { "title": "Modern Application Development (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "React integrated with backend — real-world full-stack projects.", "url": "https://onlinecourses.nptel.ac.in/noc20_cs52/preview" }
+    ],
+    "advanced": [
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Advanced", "description": "Advanced React patterns, state management, testing, and TypeScript.", "url": "https://fullstackopen.com/en/" }
+    ]
+  },
+
+  "Next.js": {
+    "beginner": [
+      { "title": "Learn Next.js", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Next.js interactive tutorial — App Router, routing, data fetching.", "url": "https://nextjs.org/learn" },
+      { "title": "Next.js Docs", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Complete Next.js documentation — pages, routing, API routes, deployment.", "url": "https://nextjs.org/docs" }
+    ],
+    "intermediate": [
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Intermediate", "description": "Full-stack React and Node.js — applicable to Next.js SSR/SSG development.", "url": "https://fullstackopen.com/en/" },
+      { "title": "Front End Development Libraries", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "React foundations and ecosystem — prerequisite for advanced Next.js.", "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/" }
+    ],
+    "advanced": []
+  },
+
+  "Tailwind CSS": {
+    "beginner": [
+      { "title": "Tailwind CSS Docs", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Tailwind CSS documentation — utility classes, configuration, customization.", "url": "https://tailwindcss.com/docs" },
+      { "title": "Learn CSS", "provider": "Google Learn", "duration": "Self-paced", "level": "Beginner", "description": "CSS fundamentals required before Tailwind CSS.", "url": "https://web.dev/learn/css/" }
+    ],
+    "intermediate": [
+      { "title": "Responsive Web Design", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Responsive design patterns that Tailwind CSS implements — practical foundation.", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/" }
+    ],
+    "advanced": []
+  },
+
+  "UI Development": {
+    "beginner": [
+      { "title": "Responsive Web Design", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "Build responsive UIs with HTML and CSS — freeCodeCamp certification.", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/" },
+      { "title": "UI Design", "provider": "Google Learn", "duration": "Self-paced", "level": "Beginner", "description": "Google's UI design patterns — layout, color, typography, accessibility.", "url": "https://web.dev/learn/design/" }
+    ],
+    "intermediate": [
+      { "title": "Front End Development Libraries", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "React, Redux, Bootstrap for real-world UI development.", "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/" },
+      { "title": "Modern Application Development (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "UI development in a full-stack context — React and web APIs.", "url": "https://onlinecourses.nptel.ac.in/noc20_cs52/preview" }
+    ],
+    "advanced": []
+  },
+
+  "Node.js": {
+    "beginner": [
+      { "title": "Node.js Learn", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Node.js guides — event loop, modules, async, file system.", "url": "https://nodejs.org/en/learn" }
+    ],
+    "intermediate": [
+      { "title": "Back End Development and APIs", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Node.js, Express, MongoDB, REST APIs — full backend certification.", "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/" },
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Intermediate", "description": "Node.js in full-stack context — REST, GraphQL, Docker, testing.", "url": "https://fullstackopen.com/en/" }
+    ],
+    "advanced": []
+  },
+
+  "Express.js": {
+    "beginner": [
+      { "title": "Express.js Guide", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Express.js guide — routing, middleware, request/response handling.", "url": "https://expressjs.com/en/starter/installing.html" }
+    ],
+    "intermediate": [
+      { "title": "Back End Development and APIs", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Express.js, REST APIs, MongoDB integration — full backend certification.", "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/" },
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Intermediate", "description": "Production-grade Express APIs with authentication and testing.", "url": "https://fullstackopen.com/en/" }
+    ],
+    "advanced": []
+  },
+
+  "REST APIs": {
+    "beginner": [
+      { "title": "REST API Tutorial", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "REST architectural constraints, HTTP methods, status codes.", "url": "https://restfulapi.net/" }
+    ],
+    "intermediate": [
+      { "title": "Back End Development and APIs", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Build REST APIs with Node.js and Express — full certification path.", "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/" }
+    ],
+    "advanced": [
+      { "title": "Full Stack Open", "provider": "Official Documentation", "duration": "14 weeks", "level": "Advanced", "description": "Advanced REST and GraphQL API patterns with authentication.", "url": "https://fullstackopen.com/en/" }
+    ]
+  },
+
+  "Authentication": {
+    "beginner": [
+      { "title": "OAuth 2.0", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official OAuth 2.0 specification and implementation guides.", "url": "https://oauth.net/2/" },
+      { "title": "Cybersecurity Intro", "provider": "Cisco Skills For All", "duration": "15 hours", "level": "Beginner", "description": "Foundational security concepts including authentication and access control.", "url": "https://skillsforall.com/course/introduction-to-cybersecurity" }
+    ],
+    "intermediate": [
+      { "title": "Back End Development and APIs", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Auth with JWT, bcrypt, session management in Node.js + Express.", "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/" }
+    ],
+    "advanced": [
+      { "title": "OWASP Web Security Testing Guide", "provider": "Official Documentation", "duration": "Self-paced", "level": "Advanced", "description": "Industry-standard security testing — auth vulnerabilities, OWASP Top 10.", "url": "https://owasp.org/www-project-web-security-testing-guide/" }
+    ]
+  },
+
+  "SQL": {
+    "beginner": [
+      { "title": "Intro to SQL", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Beginner", "description": "SQL basics — SELECT, WHERE, GROUP BY, ORDER BY with BigQuery.", "url": "https://www.kaggle.com/learn/intro-to-sql" },
+      { "title": "Relational Database", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "SQL, Bash, and relational databases — full freeCodeCamp certification.", "url": "https://www.freecodecamp.org/learn/relational-database/" }
+    ],
+    "intermediate": [
+      { "title": "SQL for Data Science", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "SQL for data analysis — joins, subqueries, window functions.", "url": "https://www.coursera.org/learn/sql-for-data-science" },
+      { "title": "Database Management System (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "DBMS theory, ER models, normalization, SQL transactions.", "url": "https://onlinecourses.nptel.ac.in/noc26_cs39/preview" }
+    ],
+    "advanced": [
+      { "title": "Fundamentals of Database Systems (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced database design, indexing, query optimization.", "url": "https://onlinecourses-archive.nptel.ac.in/noc17_cs33/course" }
+    ]
+  },
+
+  "MySQL": {
+    "beginner": [
+      { "title": "MySQL Documentation", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official MySQL 8.0 documentation — setup, SQL syntax, storage engines.", "url": "https://dev.mysql.com/doc/" },
+      { "title": "Relational Database", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "Relational database concepts and SQL with PostgreSQL (directly transferable to MySQL).", "url": "https://www.freecodecamp.org/learn/relational-database/" }
+    ],
+    "intermediate": [
+      { "title": "Database Management System (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "DBMS theory — normalization, SQL optimization, transactions.", "url": "https://onlinecourses.nptel.ac.in/noc26_cs39/preview" }
+    ],
+    "advanced": [
+      { "title": "Fundamentals of Database Systems (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced database architecture and query processing.", "url": "https://onlinecourses-archive.nptel.ac.in/noc17_cs33/course" }
+    ]
+  },
+
+  "PostgreSQL": {
+    "beginner": [
+      { "title": "PostgreSQL Tutorial", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official PostgreSQL tutorial — installation, SQL basics, data types.", "url": "https://www.postgresql.org/docs/current/tutorial.html" },
+      { "title": "Relational Database", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "Hands-on relational database course using PostgreSQL.", "url": "https://www.freecodecamp.org/learn/relational-database/" }
+    ],
+    "intermediate": [
+      { "title": "SQL for Data Science", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Advanced SQL queries applicable to PostgreSQL.", "url": "https://www.coursera.org/learn/sql-for-data-science" }
+    ],
+    "advanced": [
+      { "title": "Fundamentals of Database Systems (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced database internals — indexing, concurrency, query optimization.", "url": "https://onlinecourses-archive.nptel.ac.in/noc17_cs33/course" }
+    ]
+  },
+
+  "MongoDB": {
+    "beginner": [
+      { "title": "MongoDB Learn", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official MongoDB University — documents, CRUD, aggregation.", "url": "https://learn.mongodb.com/" }
+    ],
+    "intermediate": [
+      { "title": "NoSQL Databases", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "NoSQL data models, MongoDB patterns, and scalability concepts.", "url": "https://www.coursera.org/learn/nosql-databases" },
+      { "title": "Back End Development and APIs", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "MongoDB with Mongoose in Node.js — full backend API development.", "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/" }
+    ],
+    "advanced": []
+  },
+
+  "Data Structures": {
+    "beginner": [
+      { "title": "Python for Data Science (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Beginner", "description": "Data structures in Python — lists, trees, graphs.", "url": "https://onlinecourses.nptel.ac.in/noc24_cs78/preview" },
+      { "title": "JavaScript Algorithms and Data Structures", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "Data structures and algorithms in JavaScript — arrays, linked lists, stacks, queues.", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/" }
+    ],
+    "intermediate": [
+      { "title": "Algorithms Part I", "provider": "Coursera", "duration": "6 weeks", "level": "Intermediate", "description": "Princeton algorithms — union-find, sorting, search trees, graphs.", "url": "https://www.coursera.org/learn/algorithms-part1" }
+    ],
+    "advanced": [
+      { "title": "Design and Analysis of Algorithms (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced algorithm design — dynamic programming, network flow, NP-completeness.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs102/preview" }
+    ]
+  },
+
+  "Algorithms": {
+    "beginner": [
+      { "title": "JavaScript Algorithms and Data Structures", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Beginner", "description": "Algorithm fundamentals in JavaScript — recursion, sorting, searching.", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/" }
+    ],
+    "intermediate": [
+      { "title": "Algorithms Part I", "provider": "Coursera", "duration": "6 weeks", "level": "Intermediate", "description": "Princeton algorithms — sorting, graphs, priority queues.", "url": "https://www.coursera.org/learn/algorithms-part1" }
+    ],
+    "advanced": [
+      { "title": "Design and Analysis of Algorithms (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced algorithm design — greedy, DP, approximation algorithms.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs102/preview" }
+    ]
+  },
+
+  "OOP": {
+    "beginner": [
+      { "title": "Java Tutorial", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Java tutorial with OOP fundamentals — classes, inheritance, polymorphism.", "url": "https://docs.oracle.com/javase/tutorial/" }
+    ],
+    "intermediate": [
+      { "title": "Object Oriented Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "OOP design patterns — SOLID principles, inheritance, encapsulation, abstraction.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs101/preview" },
+      { "title": "Java Programming (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "OOP in Java — classes, interfaces, collections, exception handling.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs87/preview" }
+    ],
+    "advanced": []
+  },
+
+  "Operating Systems": {
+    "beginner": [
+      { "title": "CS50 — Introduction to Computer Science", "provider": "Harvard Online Learning", "duration": "13 weeks", "level": "Beginner", "description": "CS50 covers memory, processes, and OS abstractions at the beginner level.", "url": "https://pll.harvard.edu/course/cs50-introduction-computer-science" }
+    ],
+    "intermediate": [
+      { "title": "Operating Systems (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "OS concepts — process management, memory, file systems, synchronization.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs104/preview" }
+    ],
+    "advanced": [
+      { "title": "MIT OS Engineering", "provider": "MIT OpenCourseWare", "duration": "14 weeks", "level": "Advanced", "description": "MIT's OS engineering course — kernel design and implementation in C.", "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/" }
+    ]
+  },
+
+  "DBMS": {
+    "beginner": [
+      { "title": "Intro to SQL", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Beginner", "description": "SQL query fundamentals — essential entry point for DBMS study.", "url": "https://www.kaggle.com/learn/intro-to-sql" }
+    ],
+    "intermediate": [
+      { "title": "Database Management System (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "DBMS theory — ER diagrams, normalization, SQL, transactions, indexing.", "url": "https://onlinecourses.nptel.ac.in/noc26_cs39/preview" }
+    ],
+    "advanced": [
+      { "title": "Fundamentals of Database Systems (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced DBMS — query optimization, concurrency control, recovery.", "url": "https://onlinecourses-archive.nptel.ac.in/noc17_cs33/course" }
+    ]
+  },
+
+  "Computer Networks": {
+    "beginner": [
+      { "title": "Networking Essentials", "provider": "Cisco Skills For All", "duration": "70 hours", "level": "Beginner", "description": "Network fundamentals — TCP/IP, OSI model, routing, switching.", "url": "https://skillsforall.com/course/networking-essentials" }
+    ],
+    "intermediate": [
+      { "title": "Computer Networking", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Google's computer networking course — protocols, DNS, TCP, HTTP.", "url": "https://www.coursera.org/learn/computer-networking" }
+    ],
+    "advanced": [
+      { "title": "MIT OS Engineering", "provider": "MIT OpenCourseWare", "duration": "14 weeks", "level": "Advanced", "description": "OS-level networking — socket programming, network stacks.", "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/" }
+    ]
+  },
+
+  "Artificial Intelligence": {
+    "beginner": [
+      { "title": "Elements of AI", "provider": "Official Documentation", "duration": "6 weeks", "level": "Beginner", "description": "University of Helsinki — AI concepts, problem-solving, machine learning basics.", "url": "https://www.elementsofai.com/" }
+    ],
+    "intermediate": [
+      { "title": "Machine Learning Crash Course", "provider": "Google Learn", "duration": "15 hours", "level": "Intermediate", "description": "Google's ML intro — TensorFlow, gradient descent, neural networks.", "url": "https://developers.google.com/machine-learning/crash-course" },
+      { "title": "Introduction to Machine Learning (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "NPTEL AI/ML — supervised, unsupervised learning, model evaluation.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs85/preview" }
+    ],
+    "advanced": [
+      { "title": "Machine Learning", "provider": "Coursera", "duration": "11 weeks", "level": "Advanced", "description": "Andrew Ng's ML course — regression, SVMs, neural networks, unsupervised learning.", "url": "https://www.coursera.org/learn/machine-learning" }
+    ]
+  },
+
+  "Machine Learning": {
+    "beginner": [
+      { "title": "Intro to Machine Learning", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Beginner", "description": "ML basics — decision trees, random forests, model validation.", "url": "https://www.kaggle.com/learn/intro-to-machine-learning" }
+    ],
+    "intermediate": [
+      { "title": "Machine Learning with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "TensorFlow 2.0 and ML algorithms — full freeCodeCamp certification.", "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/" },
+      { "title": "Introduction to Machine Learning (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "Supervised and unsupervised learning, clustering, dimensionality reduction.", "url": "https://onlinecourses.nptel.ac.in/noc21_cs85/preview" },
+      { "title": "Intermediate Machine Learning", "provider": "Kaggle Learn", "duration": "4 hours", "level": "Intermediate", "description": "Missing values, pipelines, XGBoost, cross-validation.", "url": "https://www.kaggle.com/learn/intermediate-machine-learning" }
+    ],
+    "advanced": [
+      { "title": "Machine Learning (Coursera)", "provider": "Coursera", "duration": "11 weeks", "level": "Advanced", "description": "Andrew Ng's landmark ML course — full depth of ML algorithms.", "url": "https://www.coursera.org/learn/machine-learning" },
+      { "title": "Machine Learning (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Advanced", "description": "Advanced ML — Bayesian learning, ensemble methods, deep learning intro.", "url": "https://onlinecourses.nptel.ac.in/noc24_cs60/preview" }
+    ]
+  },
+
+  "Deep Learning": {
+    "beginner": [
+      { "title": "Intro to Deep Learning", "provider": "Kaggle Learn", "duration": "4 hours", "level": "Beginner", "description": "Neural networks with Keras — first deep learning models.", "url": "https://www.kaggle.com/learn/intro-to-deep-learning" }
+    ],
+    "intermediate": [
+      { "title": "Neural Networks and Deep Learning", "provider": "DeepLearning.AI", "duration": "4 weeks", "level": "Intermediate", "description": "DeepLearning.AI — neural network architecture and backpropagation.", "url": "https://www.coursera.org/learn/neural-networks-deep-learning" }
+    ],
+    "advanced": [
+      { "title": "Deep Learning Specialization", "provider": "DeepLearning.AI", "duration": "5 months", "level": "Advanced", "description": "Full deep learning path — CNN, RNN, sequence models, optimization.", "url": "https://www.coursera.org/specializations/deep-learning" }
+    ]
+  },
+
+  "NLP": {
+    "beginner": [
+      { "title": "Feature Engineering", "provider": "Kaggle Learn", "duration": "5 hours", "level": "Beginner", "description": "Text features and embeddings — NLP data preparation fundamentals.", "url": "https://www.kaggle.com/learn/feature-engineering" }
+    ],
+    "intermediate": [
+      { "title": "NLP Classification", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Text classification with vector spaces — NLP foundations.", "url": "https://www.coursera.org/learn/classification-vector-spaces-in-nlp" }
+    ],
+    "advanced": [
+      { "title": "Stanford NLP Book", "provider": "Official Documentation", "duration": "Self-paced", "level": "Advanced", "description": "Jurafsky & Martin's Speech and Language Processing — definitive NLP reference.", "url": "https://web.stanford.edu/~jurafsky/slp3/" }
+    ]
+  },
+
+  "LLMs": {
+    "beginner": [
+      { "title": "Generative AI for Everyone", "provider": "Coursera", "duration": "3 weeks", "level": "Beginner", "description": "Andrew Ng's GenAI intro — how LLMs work, use cases, limitations.", "url": "https://www.coursera.org/learn/generative-ai-for-everyone" }
+    ],
+    "intermediate": [
+      { "title": "Machine Learning Crash Course", "provider": "Google Learn", "duration": "15 hours", "level": "Intermediate", "description": "ML fundamentals that underpin LLM training.", "url": "https://developers.google.com/machine-learning/crash-course" }
+    ],
+    "advanced": [
+      { "title": "Prompt Engineering for Developers", "provider": "DeepLearning.AI", "duration": "1 hour", "level": "Advanced", "description": "DeepLearning.AI short course on ChatGPT API prompt engineering.", "url": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" }
+    ]
+  },
+
+  "Generative AI": {
+    "beginner": [
+      { "title": "Generative AI for Everyone", "provider": "Coursera", "duration": "3 weeks", "level": "Beginner", "description": "Practical GenAI — prompting, applications, and limitations.", "url": "https://www.coursera.org/learn/generative-ai-for-everyone" }
+    ],
+    "intermediate": [
+      { "title": "Machine Learning Crash Course", "provider": "Google Learn", "duration": "15 hours", "level": "Intermediate", "description": "ML foundations required for building generative AI systems.", "url": "https://developers.google.com/machine-learning/crash-course" }
+    ],
+    "advanced": [
+      { "title": "Prompt Engineering for Developers", "provider": "DeepLearning.AI", "duration": "1 hour", "level": "Advanced", "description": "Advanced prompt engineering and LLM API usage.", "url": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" },
+      { "title": "Deep Learning Specialization", "provider": "DeepLearning.AI", "duration": "5 months", "level": "Advanced", "description": "Complete deep learning path underpinning generative models.", "url": "https://www.coursera.org/specializations/deep-learning" }
+    ]
+  },
+
+  "Data Science": {
+    "beginner": [
+      { "title": "Pandas", "provider": "Kaggle Learn", "duration": "4 hours", "level": "Beginner", "description": "Data manipulation with Pandas — selecting, filtering, aggregating data.", "url": "https://www.kaggle.com/learn/pandas" },
+      { "title": "Data Visualization", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Beginner", "description": "Seaborn and Matplotlib — line charts, bar charts, heatmaps.", "url": "https://www.kaggle.com/learn/data-visualization" }
+    ],
+    "intermediate": [
+      { "title": "Data Analysis with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "NumPy, Pandas, Matplotlib, Seaborn — full data analysis certification.", "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/" },
+      { "title": "Python Data Science (NPTEL)", "provider": "NPTEL", "duration": "12 weeks", "level": "Intermediate", "description": "Applied Python for data preparation and analysis.", "url": "https://onlinecourses.nptel.ac.in/noc26_cs80/preview" }
+    ],
+    "advanced": [
+      { "title": "Machine Learning with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Advanced", "description": "TensorFlow ML pipelines and model evaluation for data science.", "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/" }
+    ]
+  },
+
+  "Statistics": {
+    "beginner": [
+      { "title": "Basic Statistics", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Descriptive statistics, probability distributions, hypothesis testing.", "url": "https://www.coursera.org/learn/basic-statistics" },
+      { "title": "Data Science Math Skills", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Math for data science — algebra, probability, statistics.", "url": "https://www.coursera.org/learn/datasciencemathskills" }
+    ],
+    "intermediate": [
+      { "title": "Pandas", "provider": "Kaggle Learn", "duration": "4 hours", "level": "Intermediate", "description": "Statistical data manipulation with Pandas — groupby, aggregations.", "url": "https://www.kaggle.com/learn/pandas" }
+    ],
+    "advanced": [
+      { "title": "Linear Algebra for ML", "provider": "Coursera", "duration": "8 weeks", "level": "Advanced", "description": "Advanced math — linear algebra, eigenvalues, PCA for ML.", "url": "https://www.coursera.org/learn/linear-algebra-machine-learning" }
+    ]
+  },
+
+  "Power BI": {
+    "beginner": [
+      { "title": "Get Started with Power BI", "provider": "Microsoft Learn", "duration": "2 hours", "level": "Beginner", "description": "Power BI fundamentals — reports, dashboards, data connections.", "url": "https://learn.microsoft.com/en-us/training/paths/get-started-power-bi/" }
+    ],
+    "intermediate": [
+      { "title": "Data Visualization", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Intermediate", "description": "Data visualization concepts applicable to Power BI dashboards.", "url": "https://www.kaggle.com/learn/data-visualization" }
+    ],
+    "advanced": []
+  },
+
+  "Tableau": {
+    "beginner": [
+      { "title": "Tableau Free Training", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Tableau free training videos — basics to dashboard building.", "url": "https://www.tableau.com/learn/training" }
+    ],
+    "intermediate": [
+      { "title": "Data Visualization", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Intermediate", "description": "Visualization principles applicable to Tableau design.", "url": "https://www.kaggle.com/learn/data-visualization" },
+      { "title": "Data Analysis with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "Python data analysis skills — complements Tableau for analytics workflows.", "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/" }
+    ],
+    "advanced": []
+  },
+
+  "Excel": {
+    "beginner": [
+      { "title": "Data Cleaning", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Beginner", "description": "Data cleaning techniques applicable to Excel and spreadsheets.", "url": "https://www.kaggle.com/learn/data-cleaning" }
+    ],
+    "intermediate": [
+      { "title": "Excel Specialization", "provider": "Coursera", "duration": "6 weeks", "level": "Intermediate", "description": "Excel for business — PivotTables, VLOOKUP, dashboards, macros.", "url": "https://www.coursera.org/specializations/excel" }
+    ],
+    "advanced": []
+  },
+
+  "Data Analytics": {
+    "beginner": [
+      { "title": "Pandas", "provider": "Kaggle Learn", "duration": "4 hours", "level": "Beginner", "description": "Foundational data manipulation for analytics workflows.", "url": "https://www.kaggle.com/learn/pandas" },
+      { "title": "Intro to SQL", "provider": "Kaggle Learn", "duration": "3 hours", "level": "Beginner", "description": "SQL for data retrieval — core skill for data analytics.", "url": "https://www.kaggle.com/learn/intro-to-sql" }
+    ],
+    "intermediate": [
+      { "title": "Data Analysis with Python", "provider": "freeCodeCamp", "duration": "300 hours", "level": "Intermediate", "description": "NumPy, Pandas, Matplotlib — full data analysis certification.", "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/" }
+    ],
+    "advanced": [
+      { "title": "Google Data Analytics", "provider": "Coursera", "duration": "6 months", "level": "Advanced", "description": "Google's professional data analytics certificate — end-to-end analytics workflow.", "url": "https://www.coursera.org/professional-certificates/google-data-analytics" }
+    ]
+  },
+
+  "AWS": {
+    "beginner": [
+      { "title": "AWS Cloud Practitioner Essentials", "provider": "Official Documentation", "duration": "6 hours", "level": "Beginner", "description": "AWS official free course — cloud concepts, services, pricing, security.", "url": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/16466/cloud-practitioner-essentials" },
+      { "title": "Cloud Principles", "provider": "Microsoft Learn", "duration": "2 hours", "level": "Beginner", "description": "Core cloud computing concepts — applicable to AWS architecture.", "url": "https://learn.microsoft.com/en-us/training/modules/principles-cloud-computing/" }
+    ],
+    "intermediate": [
+      { "title": "Cloud Computing Basics", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Cloud service models, IaaS, PaaS, SaaS — AWS architecture patterns.", "url": "https://www.coursera.org/learn/cloud-computing-basics" }
+    ],
+    "advanced": []
+  },
+
+  "Azure": {
+    "beginner": [
+      { "title": "Azure Fundamentals", "provider": "Microsoft Learn", "duration": "8 hours", "level": "Beginner", "description": "Microsoft Azure fundamentals — cloud concepts, core services, pricing.", "url": "https://learn.microsoft.com/en-us/training/paths/azure-fundamentals/" },
+      { "title": "Cloud Principles", "provider": "Microsoft Learn", "duration": "2 hours", "level": "Beginner", "description": "Cloud computing principles underpinning Azure architecture.", "url": "https://learn.microsoft.com/en-us/training/modules/principles-cloud-computing/" }
+    ],
+    "intermediate": [
+      { "title": "Cloud Computing Basics", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Cloud service models — complements Azure administrator learning.", "url": "https://www.coursera.org/learn/cloud-computing-basics" }
+    ],
+    "advanced": []
+  },
+
+  "GCP": {
+    "beginner": [
+      { "title": "GCP Fundamentals", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Google Cloud Platform fundamentals — compute, storage, networking.", "url": "https://www.coursera.org/learn/gcp-fundamentals" },
+      { "title": "Cloud Principles", "provider": "Microsoft Learn", "duration": "2 hours", "level": "Beginner", "description": "Cloud computing foundations applicable to GCP services.", "url": "https://learn.microsoft.com/en-us/training/modules/principles-cloud-computing/" }
+    ],
+    "intermediate": [
+      { "title": "Grow with Google Certificates", "provider": "Google Learn", "duration": "Self-paced", "level": "Intermediate", "description": "Google career certificates including cloud and IT specializations.", "url": "https://grow.google/certificates/" }
+    ],
+    "advanced": []
+  },
+
+  "Cloud Computing": {
+    "beginner": [
+      { "title": "Cloud Principles", "provider": "Microsoft Learn", "duration": "2 hours", "level": "Beginner", "description": "Cloud computing concepts — IaaS, PaaS, SaaS, high availability.", "url": "https://learn.microsoft.com/en-us/training/modules/principles-cloud-computing/" },
+      { "title": "Cloud Computing Basics", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Cloud service models, deployment types, and key providers.", "url": "https://www.coursera.org/learn/cloud-computing-basics" }
+    ],
+    "intermediate": [
+      { "title": "Azure Fundamentals", "provider": "Microsoft Learn", "duration": "8 hours", "level": "Intermediate", "description": "Hands-on cloud fundamentals with Azure — real-world cloud scenarios.", "url": "https://learn.microsoft.com/en-us/training/paths/azure-fundamentals/" }
+    ],
+    "advanced": []
+  },
+
+  "Git": {
+    "beginner": [
+      { "title": "Git Essentials", "provider": "Cisco Skills For All", "duration": "8 hours", "level": "Beginner", "description": "Git version control basics — init, commit, branch, merge.", "url": "https://skillsforall.com/course/git-essentials" },
+      { "title": "Git Handbook", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "GitHub's Git handbook — key concepts, workflows, commands.", "url": "https://guides.github.com/introduction/git-handbook/" }
+    ],
+    "intermediate": [
+      { "title": "Version Control with Git", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Branching strategies, rebasing, cherry-pick, and team workflows.", "url": "https://www.coursera.org/learn/version-control-with-git" }
+    ],
+    "advanced": []
+  },
+
+  "GitHub": {
+    "beginner": [
+      { "title": "Introduction to GitHub", "provider": "Microsoft Learn", "duration": "1 hour", "level": "Beginner", "description": "GitHub repositories, pull requests, issues, and collaboration basics.", "url": "https://learn.microsoft.com/en-us/training/modules/introduction-to-github/" },
+      { "title": "GitHub Skills", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Interactive GitHub courses — first repo to advanced workflows.", "url": "https://skills.github.com/" }
+    ],
+    "intermediate": [
+      { "title": "Version Control with Git", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "GitHub branching, merging, and open-source collaboration.", "url": "https://www.coursera.org/learn/version-control-with-git" }
+    ],
+    "advanced": [
+      { "title": "GitHub Actions", "provider": "Official Documentation", "duration": "Self-paced", "level": "Advanced", "description": "GitHub Actions for CI/CD pipelines, automation workflows.", "url": "https://docs.github.com/en/actions/learn-github-actions" }
+    ]
+  },
+
+  "Docker": {
+    "beginner": [
+      { "title": "Docker Getting Started", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Docker tutorial — images, containers, volumes, networking.", "url": "https://docs.docker.com/get-started/" },
+      { "title": "Containers Intro", "provider": "Microsoft Learn", "duration": "3 hours", "level": "Beginner", "description": "Container concepts — images, registries, and Docker basics.", "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-containers/" }
+    ],
+    "intermediate": [
+      { "title": "DevOps with Docker", "provider": "Official Documentation", "duration": "4 weeks", "level": "Intermediate", "description": "University of Helsinki — Docker Compose, CI/CD, production containers.", "url": "https://devopswithdocker.com/" }
+    ],
+    "advanced": []
+  },
+
+  "Kubernetes": {
+    "beginner": [
+      { "title": "Kubernetes Basics", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Kubernetes tutorial — pods, deployments, services.", "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/" },
+      { "title": "Kubernetes Intro", "provider": "Microsoft Learn", "duration": "4 hours", "level": "Beginner", "description": "Microsoft's intro to Kubernetes — clusters, nodes, workloads.", "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-kubernetes/" }
+    ],
+    "intermediate": [
+      { "title": "DevOps with Docker", "provider": "Official Documentation", "duration": "4 weeks", "level": "Intermediate", "description": "Container orchestration — Docker Compose leading into Kubernetes.", "url": "https://devopswithdocker.com/" }
+    ],
+    "advanced": []
+  },
+
+  "CI/CD": {
+    "beginner": [
+      { "title": "Git Essentials", "provider": "Cisco Skills For All", "duration": "8 hours", "level": "Beginner", "description": "Git fundamentals — version control is the foundation of CI/CD.", "url": "https://skillsforall.com/course/git-essentials" }
+    ],
+    "intermediate": [
+      { "title": "GitHub Actions", "provider": "Official Documentation", "duration": "Self-paced", "level": "Intermediate", "description": "Build CI/CD pipelines with GitHub Actions — triggers, jobs, artifacts.", "url": "https://docs.github.com/en/actions/learn-github-actions" },
+      { "title": "DevOps with Docker", "provider": "Official Documentation", "duration": "4 weeks", "level": "Intermediate", "description": "CI/CD with Docker — automated build, test, and deploy pipelines.", "url": "https://devopswithdocker.com/" }
+    ],
+    "advanced": []
+  },
+
+  "Cybersecurity": {
+    "beginner": [
+      { "title": "Introduction to Cybersecurity", "provider": "Cisco Skills For All", "duration": "15 hours", "level": "Beginner", "description": "Cybersecurity basics — threats, vulnerabilities, attack types.", "url": "https://skillsforall.com/course/introduction-to-cybersecurity" },
+      { "title": "Cybersecurity Fundamentals", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Cyber attacks, cryptography, and defense mechanisms.", "url": "https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks" }
+    ],
+    "intermediate": [
+      { "title": "Ethical Hacker", "provider": "Cisco Skills For All", "duration": "30 hours", "level": "Intermediate", "description": "Ethical hacking techniques — penetration testing, vulnerability assessment.", "url": "https://skillsforall.com/course/ethical-hacker" }
+    ],
+    "advanced": [
+      { "title": "OWASP Web Security Testing Guide", "provider": "Official Documentation", "duration": "Self-paced", "level": "Advanced", "description": "Industry-standard web security testing — OWASP Top 10, testing methodology.", "url": "https://owasp.org/www-project-web-security-testing-guide/" }
+    ]
+  },
+
+  "Networking": {
+    "beginner": [
+      { "title": "Networking Essentials", "provider": "Cisco Skills For All", "duration": "70 hours", "level": "Beginner", "description": "TCP/IP, OSI model, routing, switching, WLAN fundamentals.", "url": "https://skillsforall.com/course/networking-essentials" }
+    ],
+    "intermediate": [
+      { "title": "Computer Networking", "provider": "Coursera", "duration": "4 weeks", "level": "Intermediate", "description": "Network protocols, DNS, TCP, HTTP, and network performance.", "url": "https://www.coursera.org/learn/computer-networking" }
+    ],
+    "advanced": [
+      { "title": "MIT OS Engineering", "provider": "MIT OpenCourseWare", "duration": "14 weeks", "level": "Advanced", "description": "OS-level networking — socket programming and network stacks.", "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/" }
+    ]
+  },
+
+  "Ethical Hacking": {
+    "beginner": [
+      { "title": "Introduction to Cybersecurity", "provider": "Cisco Skills For All", "duration": "15 hours", "level": "Beginner", "description": "Security foundations before ethical hacking — threats and defense.", "url": "https://skillsforall.com/course/introduction-to-cybersecurity" }
+    ],
+    "intermediate": [
+      { "title": "Ethical Hacker", "provider": "Cisco Skills For All", "duration": "30 hours", "level": "Intermediate", "description": "Ethical hacking — penetration testing, exploits, and reporting.", "url": "https://skillsforall.com/course/ethical-hacker" }
+    ],
+    "advanced": [
+      { "title": "OWASP Web Security Testing Guide", "provider": "Official Documentation", "duration": "Self-paced", "level": "Advanced", "description": "Advanced web security testing methodology and OWASP Top 10.", "url": "https://owasp.org/www-project-web-security-testing-guide/" }
+    ]
+  },
+
+  "UI/UX Design": {
+    "beginner": [
+      { "title": "UI Design", "provider": "Google Learn", "duration": "Self-paced", "level": "Beginner", "description": "Google's UI design — layout, typography, color, accessibility.", "url": "https://web.dev/learn/design/" },
+      { "title": "Figma Design Basics", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Figma resource library — UI components and design fundamentals.", "url": "https://www.figma.com/resource-library/design-basics/" }
+    ],
+    "intermediate": [
+      { "title": "UI/UX Design Specialization", "provider": "Coursera", "duration": "6 months", "level": "Intermediate", "description": "Full UI/UX path — user research, wireframing, prototyping, testing.", "url": "https://www.coursera.org/specializations/ui-ux-design" }
+    ],
+    "advanced": []
+  },
+
+  "Figma": {
+    "beginner": [
+      { "title": "Figma Design Basics", "provider": "Official Documentation", "duration": "Self-paced", "level": "Beginner", "description": "Official Figma resource library — frames, components, auto-layout.", "url": "https://www.figma.com/resource-library/design-basics/" },
+      { "title": "UI Design", "provider": "Google Learn", "duration": "Self-paced", "level": "Beginner", "description": "UI design principles applicable to Figma prototyping.", "url": "https://web.dev/learn/design/" }
+    ],
+    "intermediate": [
+      { "title": "UI/UX Design Specialization", "provider": "Coursera", "duration": "6 months", "level": "Intermediate", "description": "Figma prototyping and user research — full UX specialization.", "url": "https://www.coursera.org/specializations/ui-ux-design" }
+    ],
+    "advanced": []
+  },
+
+  "Communication Skills": {
+    "beginner": [
+      { "title": "Communication Skills", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Workplace communication — written, verbal, and presentation skills.", "url": "https://www.coursera.org/learn/communication-skills" },
+      { "title": "Public Speaking", "provider": "Harvard Online Learning", "duration": "Self-paced", "level": "Beginner", "description": "Harvard public speaking course — confidence, delivery, and persuasion.", "url": "https://pll.harvard.edu/course/public-speaking" }
+    ],
+    "intermediate": [],
+    "advanced": []
+  },
+
+  "Aptitude": {
+    "beginner": [
+      { "title": "Data Science Math Skills", "provider": "Coursera", "duration": "4 weeks", "level": "Beginner", "description": "Quantitative reasoning — algebra, probability, set theory.", "url": "https://www.coursera.org/learn/datasciencemathskills" },
+      { "title": "Algorithms Part I", "provider": "Coursera", "duration": "6 weeks", "level": "Beginner", "description": "Princeton algorithms — logical reasoning and problem solving.", "url": "https://www.coursera.org/learn/algorithms-part1" }
+    ],
+    "intermediate": [
+      { "title": "Linear Algebra for ML", "provider": "Coursera", "duration": "8 weeks", "level": "Intermediate", "description": "Linear algebra, eigenvalues, and matrix operations for quantitative aptitude.", "url": "https://www.coursera.org/learn/linear-algebra-machine-learning" }
+    ],
+    "advanced": []
+  },
+
+  "Interview Preparation": {
+    "beginner": [
+      { "title": "Interview Preparation", "provider": "Coursera", "duration": "3 weeks", "level": "Beginner", "description": "Job interview strategies — research, STAR method, questions.", "url": "https://www.coursera.org/learn/interview-preparation" },
+      { "title": "Grow with Google Certificates", "provider": "Google Learn", "duration": "Self-paced", "level": "Beginner", "description": "Google career certificates with interview coaching.", "url": "https://grow.google/certificates/" }
+    ],
+    "intermediate": [
+      { "title": "Algorithms Part I", "provider": "Coursera", "duration": "6 weeks", "level": "Intermediate", "description": "Technical interview preparation — data structures and algorithm problems.", "url": "https://www.coursera.org/learn/algorithms-part1" }
+    ],
+    "advanced": []
+  }
+}

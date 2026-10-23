@@ -1,0 +1,53 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1242 >>
+stream
+BT /F1 11 Tf 50 750 Td (Marcus Webb) Tj ET
+BT /F1 11 Tf 50 734 Td (Email: e2e.intern@internai-test.local) Tj ET
+BT /F1 11 Tf 50 718 Td (Phone: 9999900001) Tj ET
+BT /F1 11 Tf 50 702 Td (GitHub: https://github.com/marcus-webb-dev) Tj ET
+BT /F1 11 Tf 50 686 Td () Tj ET
+BT /F1 11 Tf 50 670 Td (Education) Tj ET
+BT /F1 11 Tf 50 654 Td (B.Sc in Computer Science, Delta State University, 2023) Tj ET
+BT /F1 11 Tf 50 638 Td () Tj ET
+BT /F1 11 Tf 50 622 Td (Skills) Tj ET
+BT /F1 11 Tf 50 606 Td (Java, Spring Boot, MySQL, Docker, AWS) Tj ET
+BT /F1 11 Tf 50 590 Td () Tj ET
+BT /F1 11 Tf 50 574 Td (Experience) Tj ET
+BT /F1 11 Tf 50 558 Td (Java Developer Intern, Initech, 2022) Tj ET
+BT /F1 11 Tf 50 542 Td (Implemented microservices reducing API latency by 25 percent.) Tj ET
+BT /F1 11 Tf 50 526 Td () Tj ET
+BT /F1 11 Tf 50 510 Td (Projects) Tj ET
+BT /F1 11 Tf 50 494 Td (Order Processing System) Tj ET
+BT /F1 11 Tf 50 478 Td (Built an order processing microservice using Spring Boot and MySQL.) Tj ET
+BT /F1 11 Tf 50 462 Td (https://github.com/marcus-webb-dev/order-system) Tj ET
+BT /F1 11 Tf 50 446 Td () Tj ET
+BT /F1 11 Tf 50 430 Td (Certifications) Tj ET
+BT /F1 11 Tf 50 414 Td (AWS Certified Developer Associate, Amazon Web Services, 2022) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1605
+%%EOF

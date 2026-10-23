@@ -1,0 +1,191 @@
+/* InternAI homepage — sticky story scroll.
+   New surface area only — every class here is .hp-story-* prefixed so it
+   can never collide with the existing hp-* cascade split across
+   homepage.css / readability.css / globals.css / platform-design-system.css.
+
+   The 3D canvas that used to sit between the video and this content was
+   removed. The section is now the pinned frame, the scroll-scrubbed brand
+   video, and the real HTML content — nothing else.
+
+   Layer order inside .hp-story:
+     0  .hp-story-media     brand video (or static poster) + scrim
+     3  .hp-story-content   heading + the real HTML step cards
+   Everything stays below the navbar's effective z-index of 50. */
+
+.hp-story {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Viewport-height framing only where the pin actually engages (>=768px,
+   matching StoryScrollScene's desktop+tablet tiering). Below that there's no
+   pin, so forcing 100vh would just add dead whitespace around a plain card
+   stack — mobile keeps the normal .hp-section rhythm instead.
+   Two classes (not one) so the padding reset reliably beats the shared
+   .hp-section { padding: var(--hp-gap) 0 } rule on specificity, regardless of
+   stylesheet import order. */
+@media (min-width: 768px) {
+  .hp-story.hp-section {
+    padding: 0;
+  }
+
+  .hp-story {
+    /* 4rem == the navbar's fixed h-16 (64px) offset the pin trigger uses
+       ("top 64px"), so the pinned frame's bottom lands exactly at the
+       viewport bottom with no dead space and no overflow. */
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+/* Reduced motion gets no pin at any width, so the same reasoning applies —
+   fall back to normal section rhythm. */
+@media (prefers-reduced-motion: reduce) {
+  .hp-story.hp-section {
+    padding: var(--hp-gap) 0;
+  }
+
+  .hp-story {
+    min-height: 0;
+    display: block;
+  }
+}
+
+/* —— Media layer: the scroll-scrubbed brand video —— */
+
+.hp-story-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hp-story-video,
+.hp-story-poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Cover without distortion. The clip is composed centre-out, so no vertical
+     bias is needed now that nothing is layered in front of it. */
+  object-fit: cover;
+  object-position: center;
+  /* Half strength, so the clip reads as part of the page rather than a panel
+     laid over it. At 1 the video's own near-black backdrop replaced the site
+     background outright and the section stopped matching the sections above
+     and below it; at 0.5 the page's gradient and starfield stay visible
+     through the footage and the seam disappears. Text legibility is handled
+     separately by the scrim below, which darkens only the two bands text
+     actually occupies. */
+  opacity: 0.5;
+}
+
+.hp-story-poster {
+  /* Mobile and reduced-motion never load the video, so this single held frame
+     is the only brand image those users get. Kept just under the video: it
+     cannot be scrubbed, and object-fit: cover crops it hard on a narrow
+     viewport where a stronger logo would read as a giant cropped graphic. */
+  opacity: 0.45;
+}
+
+.hp-story-scrim {
+  position: absolute;
+  inset: 0;
+  /* Protection is targeted at the two places text actually sits rather than
+     applied as a blanket, so the middle of the clip — where the animation and
+     the logo formation happen — stays fully readable. Both layers are
+     transparent at their far edge so there is no visible band where the
+     darkening starts. */
+  background:
+    /* 1. Heading band: covers PROCESS / How InternAI works, clears by ~44%. */
+    linear-gradient(180deg, rgba(6, 9, 15, 0.82) 0%, rgba(6, 9, 15, 0.6) 18%, transparent 44%),
+    /* 2. Step-rail band: floor for the three cards, clears by ~62% upward. */
+    linear-gradient(0deg, rgba(6, 9, 15, 0.88) 0%, rgba(6, 9, 15, 0.62) 16%, transparent 38%);
+}
+
+/* —— Content column —— */
+
+.hp-story-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 0 auto;
+  /* Wider than the shared 56rem .hp-wrap for this section only, so the three
+     step cards spread across the pinned frame rather than bunching in the
+     middle of it. */
+  max-width: 72rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .hp-story-content {
+    padding: 0 1.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hp-story-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-bottom: 3.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-story-content {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.hp-story-head {
+  max-width: 34rem;
+}
+
+.hp-story-body {
+  margin-top: 2rem;
+}
+
+/* —— Step rail —— */
+
+/* The active card lifts and brightens as scroll progress reaches its stage —
+   the same progress value that drives the video's currentTime, so the rail and
+   the footage always agree on which beat the section is on. */
+.hp-story .hp-step {
+  transition:
+    opacity 450ms ease,
+    transform 450ms ease,
+    border-color 450ms ease,
+    box-shadow 450ms ease;
+}
+
+.hp-story[data-active-step] .hp-steps > * {
+  opacity: 0.42;
+}
+
+.hp-story[data-active-step="0"] .hp-steps > *:nth-child(1),
+.hp-story[data-active-step="1"] .hp-steps > *:nth-child(2),
+.hp-story[data-active-step="2"] .hp-steps > *:nth-child(3) {
+  opacity: 1;
+  transform: translateY(-6px);
+  border-color: var(--hp-border-strong);
+  box-shadow:
+    0 18px 40px -28px rgba(94, 183, 255, 0.55),
+    0 -14px 32px -20px rgba(94, 183, 255, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-story .hp-step {
+    transition: none;
+  }
+
+  .hp-story[data-active-step] .hp-steps > * {
+    opacity: 1;
+  }
+}
